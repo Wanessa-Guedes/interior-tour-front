@@ -18,6 +18,7 @@ export const ContainImages = styled.div`
     svg{
         height: 50%;
         width: 30%;
+        cursor: pointer;
     }
 `
 
@@ -26,10 +27,12 @@ export const ContainNav = styled.nav`
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    border: solid green;
-    z-index: 1;
+    background-color: white;
+    z-index: 5;
     width: 20%;
     margin-left: 79%;
+    cursor: pointer;
+    position: absolute;
 `
 
 export const ContainLogoTitle = styled.div`
