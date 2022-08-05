@@ -1,10 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 import { Container, MainInfo } from "./style";
+
 
 
 const CityBlock = () => {
     const [getCities, setGetCities] = useState([]);
+    const [userState] = useContext(UserContext);
+    console.log(userState)
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/main`).then(

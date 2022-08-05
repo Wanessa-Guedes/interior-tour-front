@@ -3,12 +3,18 @@ import { BiLogIn }  from "react-icons/bi"
 import { AiOutlineHome } from "react-icons/ai"
 import Nav from "../NavOptions"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const [dropDownMenu, setDropDownMenu] = useState(false);
+    const navigate = useNavigate();
 
     function setDrop () {
         setDropDownMenu(!dropDownMenu)
+    }
+
+    function goHome() {
+        navigate("/")
     }
 
     return (
@@ -20,7 +26,7 @@ const Header = () => {
             </ContainLogoTitle>
             <h3>BARRA DE PESQUISA VEM AQUI</h3>
                 <ContainImages>
-                    <AiOutlineHome/>
+                    <AiOutlineHome onClick={goHome}/>
                     <BiLogIn onClick={setDrop}/>
                 </ContainImages>
         </Container>
