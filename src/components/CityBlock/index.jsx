@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./style";
 import LikeButton from "../LikeButton";
+import FavoriteButton from "../FavoriteButton";
 
 
 
@@ -34,8 +35,13 @@ const CityBlock = ({value}) => {
                                         (value[0]?<LikeButton liked={city.likes?.filter((e) => e.userId === value[0].id).length !== 0} token={value[0].token} userId={value[0].id} cityId={city.id}/>
                                                     :<LikeButton liked={false}/>)
                                     }
-                                    
-                                </Buttons>
+
+                                    {
+                                        (value[0]?<FavoriteButton favorite={city.favorites?.filter((e) => e.userId === value[0].id).length !== 0} token={value[0].token} userId={value[0].id} cityId={city.id}/>
+                                                    :<FavoriteButton favorite={false}/>)
+                                    }
+
+                               </Buttons>
                             </ContainerDown>
                         </Container>
                         </>
