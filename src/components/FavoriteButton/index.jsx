@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const FavoriteButton = ({ favorite, token, userId, cityId }) => {
-    console.log(favorite)
+    // console.log(favorite)
     //console.log(userId) // undefined
     const [isFavorite, setisFavorite] = useState(favorite);
     const navigate = useNavigate();
@@ -38,7 +38,10 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
     return (
         <>
         {
-            ((isFavorite)?<AiFillStar fill={'#f3dc58'} onClick={toogleFavorite}/>:<AiOutlineStar onClick={toogleFavorite}/>)
+            ((userId !== undefined)?
+                            ((isFavorite)?<AiFillStar fill={'#f3dc58'} onClick={toogleFavorite}/>
+                                    :<AiOutlineStar onClick={toogleFavorite}/>)
+                                        :(<AiOutlineStar onClick={toogleFavorite}/>))
         }
         </>
     )

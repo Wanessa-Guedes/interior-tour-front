@@ -34,6 +34,9 @@ export const CityInfos = styled.div`
 
 export const Buttons = styled.div`
     border: solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 export const ContainerDown = styled.div`
     display: flex;

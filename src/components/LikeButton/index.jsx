@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const LikeButton = ({ liked, token, userId, cityId }) => {
-    console.log(liked)
+    // console.log(liked)
     //console.log(userId) // undefined
     const [isLiked, setisLiked] = useState(liked);
     const navigate = useNavigate();
@@ -38,7 +38,10 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
     return (
         <>
         {
-            ((isLiked)?<AiFillHeart fill={'#AC0000'} onClick={toogleLike}/>:<AiOutlineHeart onClick={toogleLike}/>)
+            ((userId !== undefined)?
+                ((isLiked)?<AiFillHeart fill={'#AC0000'} onClick={toogleLike}/>
+                            :<AiOutlineHeart onClick={toogleLike}/>)
+                                :(<AiOutlineHeart onClick={toogleLike}/>))
         }
         </>
     )
