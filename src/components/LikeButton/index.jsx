@@ -1,27 +1,44 @@
 import {AiOutlineHeart, AiFillHeart} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const LikeButton = ({ value, userId, cityId }) => {
-    //console.log(value)
+const LikeButton = ({ liked, token, userId, cityId }) => {
+    console.log(liked)
     //console.log(userId) // undefined
+    const [isLiked, setisLiked] = useState(liked);
     const navigate = useNavigate();
 
-    function like () {
+    function toogleLike () {
         if(userId === undefined){
             navigate("/sign-in");
-        } else if(value.length == 0){
+        } else if(!isLiked){
+            const config = {headers: { authorization: `Bearer ${token}`}}
+            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/like';
+            const promise = axios.post(URL, {}, config);
+            promise.then(response => {
+                setisLiked(true)
+            }).catch((error) => console.log('Error Post Like ', error))
             console.log('sou a rota de like')
-            console.log(cityId)
         } else {
+            const config = {headers: { authorization: `Bearer ${token}`}}
+            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/dislike';
+            const promise = axios.post(URL, {}, config);
+            promise.then(response => {
+                setisLiked(false);
+            }).catch((error) => console.log('Error Post Dislike ', error))
             console.log('sou a rota de dislike')
-            console.log(cityId)
         }
     }
+
+    useEffect(() => {
+        setisLiked(liked)
+    }, [liked])
 
     return (
         <>
         {
-            ((value.length !== 0)?<AiFillHeart fill={'#AC0000'} onClick={like}/>:<AiOutlineHeart onClick={like}/>)
+            ((isLiked)?<AiFillHeart fill={'#AC0000'} onClick={toogleLike}/>:<AiOutlineHeart onClick={toogleLike}/>)
         }
         </>
     )

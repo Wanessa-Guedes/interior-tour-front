@@ -31,8 +31,8 @@ const CityBlock = ({value}) => {
                                 </CityInfos>
                                 <Buttons>
                                     {
-                                        (value[0]?<LikeButton value={city.likes?.filter((e) => e.userId == value[0].id)} userId={value[0].id} cityId={city.id}/>
-                                                    :<LikeButton value={[]}/>)
+                                        (value[0]?<LikeButton liked={city.likes?.filter((e) => e.userId === value[0].id).length !== 0} token={value[0].token} userId={value[0].id} cityId={city.id}/>
+                                                    :<LikeButton liked={false}/>)
                                     }
                                     
                                 </Buttons>
