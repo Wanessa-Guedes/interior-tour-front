@@ -1,15 +1,12 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
-import UserContext from "../../contexts/UserContext";
-import { Container, MainInfo } from "./style";
+import { useEffect, useState } from "react";
+import { Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./style";
+import LikeButton from "../LikeButton";
 
 
 
-const CityBlock = () => {
+const CityBlock = ({value}) => {
     const [getCities, setGetCities] = useState([]);
-    const [userState] = useContext(UserContext);
-    console.log(userState)
-
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/main`).then(
             response => {
@@ -26,9 +23,20 @@ const CityBlock = () => {
                         <>
                         <Container key={city.id}>
                             <img src={city.url_picture} alt={`imagem da cidade de ${city.name}`}/>
-                            <h6>{`${city.name}`}</h6>
-                            <p>{`${city.short_call}`}</p>
-                            <p>CONHEÇA MELHOR</p>
+                            <ContainerDown>
+                                <CityInfos>
+                                    <h6>{`${city.name}`}</h6>
+                                    <p>{`${city.short_call}`}</p>
+                                    <p>CONHEÇA MELHOR</p>
+                                </CityInfos>
+                                <Buttons>
+                                    {
+                                        (value[0]?<LikeButton value={city.likes?.filter((e) => e.userId == value[0].id)} userId={value[0].id} cityId={city.id}/>
+                                                    :<LikeButton value={[]}/>)
+                                    }
+                                    
+                                </Buttons>
+                            </ContainerDown>
                         </Container>
                         </>
                     )

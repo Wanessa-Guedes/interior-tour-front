@@ -27,3 +27,14 @@ export const MainInfo = styled.main`
     margin: 1% 1%;
     justify-content: flex-start;
 `
+
+export const CityInfos = styled.div`
+    border: solid red;
+`
+
+export const Buttons = styled.div`
+    border: solid blue;
+`
+export const ContainerDown = styled.div`
+    display: flex;
+`

@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form } from "./style";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import UserContext from "../../contexts/UserContext";
 
 
 const AuthForm = ({options}) => {
     const navigate = useNavigate()
     const [disabled, setDisabled] = useState(false);
     const [data, setData] = useState({})
+    const [user, setUser] = useContext(UserContext)
     let onSubmit;
     
     if(options.font === 'sign-up'){
@@ -29,6 +31,7 @@ const AuthForm = ({options}) => {
                 const response = await axios.post(process.env.REACT_APP_API_URL + '/sign-in', data)
                 localStorage.setItem('user', JSON.stringify(response.data))
                 alert('BEM-VINDO')
+                setUser(response.data)
                 navigate('/')
             } catch (error) {
                 const {response} = error

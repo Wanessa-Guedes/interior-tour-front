@@ -1,11 +1,12 @@
-import { Container, ContainImages, ContainImgNav, ContainLogoTitle, ContainNav, SiteIcon, Title } from "./style"
+import { Container, ContainImages, ContainLogoTitle, ContainNav, SiteIcon, Title } from "./style"
 import { BiLogIn }  from "react-icons/bi" 
 import { AiOutlineHome } from "react-icons/ai"
 import Nav from "../NavOptions"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ value }) => {
+
     const [dropDownMenu, setDropDownMenu] = useState(false);
     const navigate = useNavigate();
 
@@ -32,7 +33,7 @@ const Header = () => {
         </Container>
         <ContainNav>
             {
-            (dropDownMenu?<Nav/>:<></>)
+            (dropDownMenu?<Nav value={value}/>:<></>)
             }
         </ContainNav>
         </>
