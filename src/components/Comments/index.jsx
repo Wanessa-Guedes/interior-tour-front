@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CommentsForm from "../CommentsForm";
+import CommentsForm from "./../EditCommentsForm"
+import InsertCommentsForm from "../InsertCommentsForm";
 
 const Comments = ({ value, id }) => {
     // console.log(value)
@@ -23,8 +24,14 @@ const Comments = ({ value, id }) => {
         <>
         {
             (value[0] === null)?(<p>Faça o login ou cadastre-se para ver os comentários</p>)
-                :((comments.length === 0)?(<p>Nehum comentário ainda. Deixe o seu!</p>)
-                    :(<CommentsForm value={value} comments={comments}/>))
+                :((comments.length === 0)?(<>
+                        <p>Nehum comentário ainda. Deixe o seu!</p>
+                        <InsertCommentsForm value={value}/>
+                        </>)
+                    :(<>
+                        <CommentsForm value={value} comments={comments}/>
+                        <InsertCommentsForm value={value}/>
+                        </>))
         }
         </>
     )
