@@ -9,7 +9,7 @@ const CityInfos = ({ value }) => {
 
     const { id } = useParams();
     const [getCity, setGetCity] = useState([]);
-    // console.log(getCity)
+     console.log(getCity)
     //console.log(process.env.API_GOOGLE)
 
     useEffect(() => {

@@ -1,8 +1,9 @@
+import DeleteButton from "../DeleteCommentButton";
 import EditButton from "../EditCommentButton";
 import { CommentsInfo } from "./style";
 
 
-const CommentsForm = ({ value, comments }) => {
+const CommentsForm = ({ value, comments, updateComment, setUpdateComment, deleteCommentStatus, setDeleteCommentStatus }) => {
     
     return (
         <>
@@ -27,7 +28,19 @@ const CommentsForm = ({ value, comments }) => {
                                 }
 
                                 {
-                                    (value[0].id === comment.user.id)?(<EditButton value={value} comment={comment}/>):(<></>)
+                                    (value[0].id === comment.user.id)?(<>
+                                        <EditButton
+                                            value={value}
+                                            comment={comment}
+                                            updateComment={updateComment}
+                                            setUpdateComment={setUpdateComment}/>
+                                        <DeleteButton 
+                                            value={value} 
+                                            comment={comment}
+                                            deleteCommentStatus={deleteCommentStatus}
+                                            setDeleteCommentStatus={setDeleteCommentStatus}/>
+                                        </>):(
+                                            <></>)
                                 }
                                 </div>
                             </CommentsInfo>):(<></>)

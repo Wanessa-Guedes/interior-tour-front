@@ -1,16 +1,15 @@
-import { useState, useRef, useEffect} from 'react'
+import { useState} from 'react'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
 import { Form } from './style'
 
 
-const InsertCommentsForm = ({ value }) => {
+const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus }) => {
 
     const [disable, setDisable] = useState(false)
     const [comment, setComment] = useState('')
     const {id} = useParams();
-    console.log(id)
- 
+  
     function publish(e){
         e.preventDefault()
         setDisable(true)
@@ -25,10 +24,12 @@ const InsertCommentsForm = ({ value }) => {
         promise.then(response => {
             setComment('')
             setDisable(false)
+            setInsertCommentStatus(!insertCommentStatus)
             console.log(response.data)
         })
         promise.catch(e => {
             setDisable(false)
+            setInsertCommentStatus(false)
             alert(e.response.data.message)
         })
     }
@@ -43,7 +44,7 @@ const InsertCommentsForm = ({ value }) => {
                     onChange={e => setComment(e.target.value)}
                     disabled={disable}
                     required />
-                    <button disabled={disable}> Comentário</button>
+                    <button disabled={disable}> Comentário </button>
             </Form>
         </>
     )

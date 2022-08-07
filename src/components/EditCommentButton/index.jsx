@@ -3,9 +3,7 @@ import { useState, useRef, useEffect} from 'react'
 import axios from "axios"
 import { Input } from "./style";
 
-const EditButton = ({ value, comment }) => {
-    console.log(comment)
-
+const EditButton = ({ value, comment, updateComment, setUpdateComment }) => {
     const [editCommentValue, setEditCommentValue] = useState(false)
     const [disable, setDisable] = useState(false)
     const [commentValue, setCommentValue] = useState(comment.comment)
@@ -16,9 +14,11 @@ const EditButton = ({ value, comment }) => {
         if(editCommentValue === false){
             setResetValue(commentValue)
             setEditCommentValue(true)
+            setUpdateComment(false)
         } else {
             setEditCommentValue(false)
             setCommentValue(resetValue)
+            setUpdateComment(true)
         }
     }
 
@@ -41,10 +41,12 @@ const EditButton = ({ value, comment }) => {
         })
         promise.then(response => {
             setEditCommentValue(false)
+            setUpdateComment(true)
             setDisable(false)
         }).catch(e => {
             alert(e.response.data.message)
             setDisable(false)
+            setUpdateComment(false)
             inputRef.current.focus()
         })
     }
@@ -53,13 +55,16 @@ const EditButton = ({ value, comment }) => {
         <>
             <BiEditAlt cursor={'pointer'} onClick={() => editComment()}/>
             {
-                (editCommentValue)?(<form onSubmit={editCommentSubmit}>
+                (editCommentValue)?(<form>
                 <Input ref={inputRef}
                         type='text'
                         value={commentValue}
                         onChange={e => setCommentValue(e.target.value)}
                         disabled={disable}
                     />
+                    <button 
+                        onClick={editCommentSubmit}
+                        disabled={disable}>editar</button>
                 </form>):(<></>)
             }
         </>

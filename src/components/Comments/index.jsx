@@ -7,7 +7,12 @@ import InsertCommentsForm from "../InsertCommentsForm";
 const Comments = ({ value, id }) => {
     // console.log(value)
     const [comments, setComments] = useState([])
+    const [updateComment, setUpdateComment] = useState(false)
+    const [deleteCommentStatus, setDeleteCommentStatus] = useState(false)
+    const [insertCommentStatus, setInsertCommentStatus] = useState(false)
     // console.log(comments)
+    // console.log(updateComment)
+    // console.log(deleteCommentStatus)
 
         useEffect(() => {
             if(value[0] !== null){
@@ -18,7 +23,7 @@ const Comments = ({ value, id }) => {
                     setComments(response.data)
                 }).catch((error) => console.log('Error get comments ', error))
                 // console.log('sou a rota de comentários')
-        }}, [id, value, comments]);
+        }}, [id, value, updateComment, deleteCommentStatus, insertCommentStatus]);
 
     return (
         <>
@@ -29,8 +34,17 @@ const Comments = ({ value, id }) => {
                         <InsertCommentsForm value={value}/>
                         </>)
                     :(<>
-                        <CommentsForm value={value} comments={comments}/>
-                        <InsertCommentsForm value={value}/>
+                        <CommentsForm 
+                            value={value}
+                            comments={comments}
+                            updateComment={updateComment}
+                            setUpdateComment={setUpdateComment}
+                            deleteCommentStatus={deleteCommentStatus}
+                            setDeleteCommentStatus={setDeleteCommentStatus}/>
+                        <InsertCommentsForm 
+                            value={value}
+                            insertCommentStatus={insertCommentStatus}
+                            setInsertCommentStatus={setInsertCommentStatus}/>
                         </>))
         }
         </>
