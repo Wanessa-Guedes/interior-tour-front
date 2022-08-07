@@ -4,6 +4,7 @@ import MainPage from '../Pages/MainPage';
 import SignUp from '../Pages/AuthPage/SignUp';
 import SignIn from '../Pages/AuthPage/Login';
 import UserContext from '../../contexts/UserContext';
+import CityPage from '../Pages/CityPage';
 
 function App() {
     const tokenStorageString = localStorage.getItem("user")
@@ -16,6 +17,7 @@ function App() {
                     <Route path='/' element={<MainPage/>}/>
                     <Route path="/sign-up" element={<SignUp/>}/>
                     <Route path="/sign-in" element={<SignIn/>}/>
+                    <Route path="/city/:id" element={<CityPage/>}/>
                 </Routes>
         </BrowserRouter>
         </UserContext.Provider>

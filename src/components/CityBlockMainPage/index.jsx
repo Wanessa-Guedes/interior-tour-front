@@ -4,6 +4,7 @@ import { Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./style"
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
+import { Link } from "react-router-dom";
 
 
 
@@ -29,7 +30,7 @@ const CityBlock = ({value}) => {
                                 <CityInfos>
                                     <h6>{`${city.name}`}</h6>
                                     <p>{`${city.short_call}`}</p>
-                                    <p>CONHEÇA MELHOR</p>
+                                    <Link to={`/city/${city.id}`}>CONHEÇA MELHOR</Link>
                                 </CityInfos>
                                 <Buttons>
                                     {

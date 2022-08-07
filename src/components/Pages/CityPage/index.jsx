@@ -1,20 +1,19 @@
-import CentralImg from "../../CentralImg"
+import CentralImg from "../../CentralImg";
 import CityBlock from "../../CityBlockMainPage";
-import Header from "./../../Header"
-import { CityTitle } from "./style"
+import Header from "../../Header";
+import { CityTitle } from "../MainPage/style";
 import { useContext } from "react";
 import UserContext from "./../../../contexts/UserContext";
+import CityInfos from "../../CityInfosPage";
 
 
-export default function MainPage(){
+export default function CityPage () {
     const [user, setUser] = useContext(UserContext);
 
     return (
         <>
             <Header value={[user, setUser]}/>
-            <CentralImg/>
-            <CityTitle>CIDADES</CityTitle>
-            <CityBlock value={[user, setUser]}/>
+            <CityInfos value={[user, setUser]}/>
         </>
     )
 }
