@@ -4,6 +4,7 @@ import { AiOutlineHome } from "react-icons/ai"
 import Nav from "../NavOptions"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import SearchBar from "../SearchBar"
 
 const Header = ({ value }) => {
 
@@ -25,7 +26,7 @@ const Header = ({ value }) => {
                 <SiteIcon src={"https://cdn-icons-png.flaticon.com/128/7683/7683912.png"} radius={50}/>
                 <Title>Interior Tour</Title>
             </ContainLogoTitle>
-            <h3>BARRA DE PESQUISA VEM AQUI</h3>
+            <SearchBar/>
                 <ContainImages>
                     <AiOutlineHome onClick={goHome}/>
                     <BiLogIn onClick={setDrop}/>
