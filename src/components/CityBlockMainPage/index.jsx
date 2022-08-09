@@ -8,20 +8,22 @@ import { Link } from "react-router-dom";
 
 
 
-const CityBlock = ({value}) => {
+const CityBlock = ({value, URL}) => {
+
     const [getCities, setGetCities] = useState([]);
+
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/main`).then(
+        axios.get(`${process.env.REACT_APP_API_URL}${URL}`).then(
             response => {
                 setGetCities(response.data);
             }
         ).catch(e => {console.log(e.data)})
-    }, []);
+    }, [value]);
 
     return (
         <MainInfo>
             {
-                getCities.map((city) => {
+                getCities?.map((city) => {
                     return (
                         <>
                         <Container key={city.id}>

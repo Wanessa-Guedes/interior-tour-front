@@ -5,6 +5,9 @@ import SignUp from '../Pages/AuthPage/SignUp';
 import SignIn from '../Pages/AuthPage/Login';
 import UserContext from '../../contexts/UserContext';
 import CityPage from '../Pages/CityPage';
+import StatePage from '../Pages/CitiesByStatePage';
+import FavoritePage from '../Pages/FavoritesPage';
+import Profile from '../Pages/UserProfile';
 
 function App() {
     const tokenStorageString = localStorage.getItem("user")
@@ -18,6 +21,9 @@ function App() {
                     <Route path="/sign-up" element={<SignUp/>}/>
                     <Route path="/sign-in" element={<SignIn/>}/>
                     <Route path="/city/:id" element={<CityPage/>}/>
+                    <Route path="/state/:stateId/cities" element={<StatePage/>}/>
+                    <Route path="/favorites" element={<FavoritePage/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
                 </Routes>
         </BrowserRouter>
         </UserContext.Provider>

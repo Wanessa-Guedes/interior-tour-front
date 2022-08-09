@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import SearchBar from "../SearchBar"
 
 const Header = ({ value }) => {
-
     const [dropDownMenu, setDropDownMenu] = useState(false);
     const navigate = useNavigate();
 

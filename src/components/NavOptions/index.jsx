@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Nav = ({ value }) => {
-    // console.log(value[0])
     const navigate = useNavigate();
     // TODO: LEMBRAR DE MUDAR PARA A ROTA CORRETA
     function userProf () {
         if(value[0] !== null){
             if(value[0].token !== null){
-                return `/sign-up`
+                return `/profile`
             }} else {
                 return `/sign-in`
             }
@@ -30,7 +29,7 @@ const Nav = ({ value }) => {
                     }
                 </Link >
 
-                <Link to={`/`}>
+                <Link to={`/favorites`}>
                     {
                         (value[0] === null)?<></>:(`Favoritas`)
                     }

@@ -1,11 +1,13 @@
+import { useContext } from "react";
 import AuthForm from "../../../AuthForm";
 import Header from "../../../Header";
 import { SignUpTitle } from "./style";
+import UserContext from "./../../../../contexts/UserContext";
 
 
 
 export default function SignUp(){
-
+    const [user, setUser] = useContext(UserContext);
     const inputs = [
         {key: 'email', text: 'E-mail'},
         {key: 'userName', text: 'Username'},
@@ -16,7 +18,7 @@ export default function SignUp(){
 
     return(
         <>
-        <Header/>
+        <Header value={[user, setUser]}/>
         <SignUpTitle>CADASTRE SEUS DADOS</SignUpTitle>
         <AuthForm
             options={{
