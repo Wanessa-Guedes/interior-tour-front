@@ -41,3 +41,9 @@ export const Buttons = styled.div`
 export const ContainerDown = styled.div`
     display: flex;
 `
+
+export const NoCitiesFound = styled.p`
+    font-family: var(--default-font);
+    font-size: 20px;
+    text-align: center;
+`

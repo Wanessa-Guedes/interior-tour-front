@@ -21,7 +21,9 @@ export const SearchBarContainer = styled.form`
         border: none;
         background-color: #FFFF;
         border-radius: 0 8px 8px 0;
+        font-size: 20px;
         height: 47px;
+        cursor: pointer;
     }
     @media screen and (max-width: 900px) {
         width: 350px;

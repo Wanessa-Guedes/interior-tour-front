@@ -2,6 +2,7 @@ import {TbMapPin, TbMapPinOff} from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { IconsPopUp } from "../FavoriteButton/style";
 
 const VisitedButton = ({ visited, token, userId, cityId }) => {
     // console.log(visited)
@@ -37,12 +38,14 @@ const VisitedButton = ({ visited, token, userId, cityId }) => {
 
     return (
         <>
+        <IconsPopUp>
         {
             ((userId !== undefined)?
-                    ((isVisited)?<TbMapPin cursor={"pointer"} onClick={toogleVisited}/>
-                                :<TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/>)
-                                    :(<TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/>))
+                    ((isVisited)?<><TbMapPin cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Não Visitei</div> </>
+                                :<><TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>)
+                                    :(<><TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>))
         }
+        </IconsPopUp>
         </>
     )
 }

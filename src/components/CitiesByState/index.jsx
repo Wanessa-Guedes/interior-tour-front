@@ -6,6 +6,7 @@ import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link, useParams } from "react-router-dom";
 import Button from '@mui/material/Button';
+import { NoCitiesFound } from "./style";
 
 
 const CityByState = ({value}) => {
@@ -27,7 +28,7 @@ const CityByState = ({value}) => {
             {
                getCities?.map((cities) => {
                 if(cities.cities.length === 0){
-                    return <p>Nenhuma cidade cadastrada nesse estado ainda</p>
+                    return <NoCitiesFound>Nenhuma cidade cadastrada nesse estado ainda</NoCitiesFound>
                 }
                     return cities.cities?.map((city) => {
                             return (

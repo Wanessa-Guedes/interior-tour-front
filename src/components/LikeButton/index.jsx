@@ -2,6 +2,7 @@ import {AiOutlineHeart, AiFillHeart} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { IconsPopUp } from "../FavoriteButton/style";
 
 const LikeButton = ({ liked, token, userId, cityId }) => {
     // console.log(liked)
@@ -37,12 +38,14 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
 
     return (
         <>
+        <IconsPopUp>
         {
             ((userId !== undefined)?
-                ((isLiked)?<AiFillHeart cursor={"pointer"} fill={'#AC0000'} onClick={toogleLike}/>
-                            :<AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/>)
-                                :(<AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/>))
+                ((isLiked)?<><AiFillHeart cursor={"pointer"} fill={'#AC0000'} onClick={toogleLike}/><div class="hdg-label-popup">Descurtir</div> </>
+                            :<><AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>)
+                                :(<><AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>))
         }
+        </IconsPopUp>
         </>
     )
 }

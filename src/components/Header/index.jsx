@@ -21,7 +21,7 @@ const Header = ({ value }) => {
     return (
         <>
         <Container>
-            <ContainLogoTitle>
+            <ContainLogoTitle onClick={goHome}>
                 <SiteIcon src={"https://cdn-icons-png.flaticon.com/128/7683/7683912.png"} radius={50}/>
                 <Title>Interior Tour</Title>
             </ContainLogoTitle>

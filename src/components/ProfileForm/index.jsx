@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { MainContain, Title } from "./style";
+import { ContainImgTxt, ContainInfos, MainContain, Title } from "./style";
 
 
 const ProfileForm = ({value, URL}) => {
@@ -21,17 +21,26 @@ const ProfileForm = ({value, URL}) => {
     return(<>
     <Title>Seu Perfil</Title>
     <MainContain>
-        <ul>
+        <ContainInfos>
             {
                 getInfos?.map(info => {
                     return( <>
-                            <img src={info.profile_picture} alt={`Imagem de perfil do usuário ${info.user_name}`} />
-                            <li>{info.user_name}</li>
-                            <li>{info.email}</li>
+                            <ContainImgTxt>
+                                <p>Imagem de Perfil:</p>
+                                <img src={info.profile_picture} alt={`Imagem de perfil do usuário ${info.user_name}`} />
+                            </ContainImgTxt>
+                            <ContainImgTxt>
+                                <p> Nome do Usuário:</p>
+                                <li>{info.user_name}</li>
+                            </ContainImgTxt>   
+                            <ContainImgTxt> 
+                                <p>E-mail Cadastrado:</p>
+                                <li>{info.email}</li>
+                            </ContainImgTxt>
                             </>)
                 })
             }
-        </ul>
+        </ContainInfos>
     </MainContain>
     </>)
 }

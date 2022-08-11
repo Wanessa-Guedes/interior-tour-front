@@ -14,8 +14,8 @@ export const Container = styled.main`
 
     h3 {
         position: absolute;
-        font-family: 'Square Peg', cursive;
+        font-family: var(--title-font);
         font-size: 50px;
-        color: white;
+        color: #FFFFFF;
     }
 `

@@ -6,6 +6,7 @@ import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
+import { NoCitiesFound } from "../CitiesByState/style";
 
 const FavoriteCity = ({value, URL}) => {
 
@@ -21,7 +22,7 @@ const FavoriteCity = ({value, URL}) => {
                 //setGetCities(response.data)
             }).catch((error) => console.log('Error get favorite cities ', error))
             // console.log('sou a rota de comentários')
-    }}, [value]);
+    }}, [value, getCities]);
 
     function cityArray (cities) {
         for(let i = 0; i < cities.length; i++){
@@ -33,7 +34,7 @@ const FavoriteCity = ({value, URL}) => {
     return (
         <MainInfo>
             {
-            (getCities.length === 0)?(<p>Favorite umas cidades!! </p>):(
+            (getCities.length === 0)?(<NoCitiesFound>Favorite umas cidades!! </NoCitiesFound>):(
                getCities?.map((cities, index) => {
                 return (
                     <>

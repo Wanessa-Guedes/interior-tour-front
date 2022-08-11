@@ -2,6 +2,7 @@ import {AiOutlineStar, AiFillStar} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { IconsPopUp } from "./style";
 
 const FavoriteButton = ({ favorite, token, userId, cityId }) => {
     // console.log(favorite)
@@ -37,12 +38,15 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
 
     return (
         <>
+        <IconsPopUp>
         {
             ((userId !== undefined)?
-                            ((isFavorite)?<AiFillStar cursor={"pointer"} fill={'#f3dc58'} onClick={toogleFavorite}/>
-                                    :<AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/>)
-                                        :(<AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/>))
+                            ((isFavorite)?<><AiFillStar cursor={"pointer"} fill={'#f3dc58'} onClick={toogleFavorite}/>
+                                              <div class="hdg-label-popup">Desfavoritar</div> </>
+                                    :<><AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>)
+                                        :(<><AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>))
         }
+        </IconsPopUp>
         </>
     )
 }

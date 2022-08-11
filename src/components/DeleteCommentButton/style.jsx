@@ -1,35 +1,5 @@
 import styled from "styled-components"
 
-export const ConfirmButton = styled.button`
-    width: 134px;
-    height: 37px;
-    background: #1877F2;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    color: #FFFFFF;
-    border: none;
-    margin: 47px 13px;
-    cursor: pointer;
-`
-export const CancelButton = styled.button`
-    width: 134px;
-    height: 37px;
-    background: #FFFFFF;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    color: #1877F2;
-    border: none;
-    margin: 47px 13px;
-    cursor: pointer;
-`
 export const NameAndButtons = styled.div`
     display: flex;
     justify-content: space-between;
@@ -52,9 +22,16 @@ export const ContentModal = styled.div`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 25px;
     line-height: 41px;
     text-align: center;
+
+    div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 `
 export const modalStyle = {
     overlay: {
@@ -65,15 +42,14 @@ export const modalStyle = {
         bottom: 0
     },
     content: {
-        width: 597,
-        height: 262,
+        width: 400,
+        height: 150,
         color: '#ffffff',
-        backgroundColor: '#333333',
+        backgroundColor: "#79A9E8",
         borderRadius: '50px',
         position: 'absolute',
         top: '35%',
         left: '35%',
-        padding: '38px 120px',
         overflow: 'hidden'
     }
 }

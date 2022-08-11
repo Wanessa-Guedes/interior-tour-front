@@ -2,9 +2,8 @@ import { useContext } from "react";
 import UserContext from "./../../../contexts/UserContext";
 import Header from "../../Header";
 import CentralImg from "../../CentralImg";
-import { CityTitle } from "../../CityInfosPage/style";
-import CityBlock from "../../CityBlockMainPage";
 import FavoriteCity from "../../FavoritesCities";
+import { CityTitle } from "./style";
 
 
 export default function FavoritePage () {
@@ -13,7 +12,7 @@ export default function FavoritePage () {
     return (<>
             <Header value={[user, setUser]}/>
             <CentralImg/>
-            <CityTitle>Suas cidades Favoritas</CityTitle>
+            <CityTitle>Suas Cidades Favoritas</CityTitle>
             <FavoriteCity value={[user, setUser]} URL={URL}/>
             </>)
 }

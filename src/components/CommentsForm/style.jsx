@@ -2,34 +2,41 @@ import styled from "styled-components";
 
 
 export const CommentsInfo = styled.ul`
-    width: 20%;
-    border-bottom: 2px solid var(--block-card-color);
-    margin-left: 2%;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    //width: 20rem;
+    align-items: flex-start;
+    justify-content: center;
 `
 
 export const ContainerComments = styled.div`
-   // background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
 `
 
 export const ContainPicName = styled.div`
+    width: 20rem;
     display: flex;
-    justify-content: start;
     align-items: center;
-    img {
+img {
         width: 10%;
-        border-radius: 2px;
+        border-radius: 5px;
     }
 `
 
 export const ContainCommentButtons = styled.div`
+    width: 15rem;
+    height: 2.5rem;
     display: flex;
-    justify-content: start;
     align-items: center;
-    background-color: var(--backgrund-title);
-    border-radius: 10px;
+    margin-left: 2%;
+    background-color: #C294C2;
+    word-break: break-all;
+    border-radius: 20px;
+
+    span {
+        margin-left: 2%;
+    }
 
     svg {
         margin: 2%;

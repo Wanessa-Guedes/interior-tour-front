@@ -26,11 +26,10 @@ const AuthForm = ({options}) => {
                 setLoading(false);
                 navigate('/sign-in')
             } catch (error) {
-                const {response} = error
-                const fieldNotFilled = response.data.constraint.split('_')[1]
                 setLoading(false);
-                if(response.status === 409) alert(`ERRO: ${fieldNotFilled} já está em uso`)
-                else alert(error)
+                if(error.response.status === 422){
+                    toast.error('Senhas não são iguais')
+                }
             }
     }
     } else {
@@ -44,9 +43,12 @@ const AuthForm = ({options}) => {
                 setUser(response.data)
                 navigate('/')
             } catch (error) {
+                setLoading(false);
                 if(error.response.status === 401){
                     toast.error('Senha incorreta')
-                    setLoading(false);
+                }
+                if(error.response.status === 404){
+                    toast.error('E-mail não cadastrado')
                 }
             }
     }

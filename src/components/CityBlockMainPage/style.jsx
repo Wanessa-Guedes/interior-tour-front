@@ -47,6 +47,19 @@ export const CityInfos = styled.div`
         padding: 2%;
         margin-bottom: 1%;
     }
+
+    p {
+        width: 65%;
+        word-break: normal;
+        font-family: var(--default-font);
+        font-size: 13px;
+    }
+
+    h6 {
+        font-family: var(--default-font);
+        font-size: 12px;
+        font-weight: bold;
+    }
 `
 
 export const Buttons = styled.div`

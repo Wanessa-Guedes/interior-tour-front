@@ -20,12 +20,17 @@ export const ContainImages = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin-right: 1%;
 
     svg{
-        height: 50%;
-        width: 30%;
+        height: 40%;
+        width: 25%;
         cursor: pointer;
+
+        :hover {
+            color: var(--backgrund-title);
+        }
     }
 `
 
@@ -51,6 +56,7 @@ export const ContainLogoTitle = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 2% 0 2%;
+    cursor: pointer;
 
     h3 {
         margin: 0 10% 0 10%;
@@ -63,6 +69,7 @@ export const SiteIcon = styled.img`
 `
 
 export const Title = styled.h3`
-    font-family: 'Square Peg', cursive;
-    font-size: 30px;
+    font-family: var(--title-font);
+    font-size: 20px;
+    width: 20%;
 `

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CommentsForm from "./../EditCommentsForm"
 import InsertCommentsForm from "../InsertCommentsForm";
+import CommentsForm from "../CommentsForm";
 
 const Comments = ({ value, id }) => {
     // console.log(value)

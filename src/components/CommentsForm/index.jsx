@@ -26,7 +26,7 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                     </ContainPicName>
                                 <ContainCommentButtons>
                                 {
-                                    comment.comment
+                                    <span>{comment.comment}</span>
                                 }
 
                                 {
