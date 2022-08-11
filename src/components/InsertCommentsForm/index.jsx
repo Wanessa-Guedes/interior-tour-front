@@ -1,7 +1,8 @@
 import { useState} from 'react'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
-import { Form } from './style'
+import { ContainFormButton, Form } from './style'
+import {FiSend} from "react-icons/fi"
 
 
 const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus }) => {
@@ -36,6 +37,7 @@ const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus
 
     return (
         <>
+        <ContainFormButton>
             <Form onSubmit={publish}>
                 <input
                     type='text'
@@ -44,8 +46,9 @@ const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus
                     onChange={e => setComment(e.target.value)}
                     disabled={disable}
                     required />
-                    <button disabled={disable}> Comentário </button>
+                    <button disabled={disable}> <FiSend/> </button>
             </Form>
+        </ContainFormButton>
         </>
     )
 

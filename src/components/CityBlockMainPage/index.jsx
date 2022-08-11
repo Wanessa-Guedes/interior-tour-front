@@ -1,27 +1,35 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./style";
+import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style";
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link } from "react-router-dom";
-
-
+import Button from '@mui/material/Button';
+import { InfinitySpin } from  'react-loader-spinner';
 
 const CityBlock = ({value, URL}) => {
 
     const [getCities, setGetCities] = useState([]);
+    const [loading, setLoading] = useState(false);
+    console.log(getCities)
 
     useEffect(() => {
+        setLoading(true)
         axios.get(`${process.env.REACT_APP_API_URL}${URL}`).then(
             response => {
                 setGetCities(response.data);
+                setLoading(false)
             }
-        ).catch(e => {console.log(e.data)})
+        ).catch(e => {
+            alert(e.response.data.message)
+            setLoading(false)
+        })
     }, [value]);
 
-    return (
-        <MainInfo>
+    return (<>
+        {(loading)?(<Loader><InfinitySpin/></Loader>):
+        (<MainInfo>
             {
                 getCities?.map((city) => {
                     return (
@@ -32,7 +40,7 @@ const CityBlock = ({value, URL}) => {
                                 <CityInfos>
                                     <h6>{`${city.name}`}</h6>
                                     <p>{`${city.short_call}`}</p>
-                                    <Link to={`/city/${city.id}`}>CONHEÇA MELHOR</Link>
+                                    <Button variant="contained"><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
                                 </CityInfos>
                                 <Buttons>
                                     {
@@ -69,7 +77,8 @@ const CityBlock = ({value, URL}) => {
                 })
             }
         </MainInfo>
-    )
+)}
+</>)
 
 
 }

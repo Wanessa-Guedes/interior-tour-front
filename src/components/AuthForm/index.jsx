@@ -1,26 +1,34 @@
 import { useState, useContext } from "react";
-import { Form } from "./style";
+import { Form, Container, Loader } from "./style";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../contexts/UserContext";
+import Button from '@mui/material/Button';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { InfinitySpin } from  'react-loader-spinner';
 
 
 const AuthForm = ({options}) => {
     const navigate = useNavigate()
     const [disabled, setDisabled] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState({})
     const [user, setUser] = useContext(UserContext)
     let onSubmit;
-    
+
     if(options.font === 'sign-up'){
         onSubmit = async () => {
             try {
+                setLoading(true);
                 await axios.post(process.env.REACT_APP_API_URL + '/sign-up', data)
                 alert('Usuário cadastrado com sucesso')
+                setLoading(false);
                 navigate('/sign-in')
             } catch (error) {
                 const {response} = error
                 const fieldNotFilled = response.data.constraint.split('_')[1]
+                setLoading(false);
                 if(response.status === 409) alert(`ERRO: ${fieldNotFilled} já está em uso`)
                 else alert(error)
             }
@@ -28,16 +36,18 @@ const AuthForm = ({options}) => {
     } else {
         onSubmit = async () => {
             try {
+                setLoading(true);
                 const response = await axios.post(process.env.REACT_APP_API_URL + '/sign-in', data)
                 localStorage.setItem('user', JSON.stringify(response.data))
-                alert('BEM-VINDO')
+                toast.success('BEM-VINDO');
+                setLoading(false);
                 setUser(response.data)
                 navigate('/')
             } catch (error) {
-                const {response} = error
-                const fieldNotFilled = response.data.constraint.split('_')[1]
-                if(response.status === 409) alert(`ERRO: ${fieldNotFilled} já está em uso`)
-                else alert(error)
+                if(error.response.status === 401){
+                    toast.error('Senha incorreta')
+                    setLoading(false);
+                }
             }
     }
     }
@@ -57,6 +67,8 @@ const AuthForm = ({options}) => {
     })
 
     return (<>
+        <ToastContainer />
+        <Container>
             <Form onSubmit={submitHandler}>
             {
                 options.inputs.map(e => {
@@ -68,14 +80,25 @@ const AuthForm = ({options}) => {
                 />
                 )})
             }
-                <button disabled={disabled} type="submit">
-                    {options.submitButtonText}
-                </button>
-                <Link to={options.auxPageLink}>
-                    {options.auxPageLinkText}
-                </Link>
+            {
+                (loading)?(<Loader><InfinitySpin color="#fa8bfa"/></Loader>):(<>
+            <Button variant="contained" disabled={disabled} type="submit">
+                        {options.submitButtonText}
+                </Button>
+                <Button variant="outlined">
+                    <Link to={options.auxPageLink}>
+                        {options.auxPageLinkText}
+                    </Link>
+                </Button>
+                <Button variant="outlined">
+                    <Link to={"/"}>
+                        Voltar para a página principal
+                    </Link>
+                </Button>
+               </> )
+            }
             </Form>
-    
+        </Container>
     </>)
 }
 

@@ -23,4 +23,9 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
+`
+
+export const CommentsText = styled.h5`
+    color: black;
 `

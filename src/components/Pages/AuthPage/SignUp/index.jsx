@@ -18,14 +18,13 @@ export default function SignUp(){
 
     return(
         <>
-        <Header value={[user, setUser]}/>
         <SignUpTitle>CADASTRE SEUS DADOS</SignUpTitle>
         <AuthForm
             options={{
                 inputs: inputs,
-                submitButtonText: 'Sign Up',
+                submitButtonText: 'Cadastrar',
                 auxPageLink: '/sign-in',
-                auxPageLinkText: 'Switch back to sign in',
+                auxPageLinkText: 'Voltar para o login',
                 font: 'sign-up'
             }}
         />

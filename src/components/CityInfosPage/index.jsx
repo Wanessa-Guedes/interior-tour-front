@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { CityDescription, CityTitle, Container, ImgCity } from "./style";
+import { CityDescription, CityTitle, CommentsText, Container, ImgCity } from "./style";
 import AttracttionsInfos from "../Attractions/style";
 import Comments from "../Comments";
 
@@ -31,6 +31,7 @@ const CityInfos = ({ value }) => {
                             <CityDescription>{city.description}</CityDescription>
                         </Container>
                         <AttracttionsInfos city={city}/>
+                        <CommentsText>Comentários</CommentsText>
                         <Comments value={value} id={city.id}/>
                         </>
                     )

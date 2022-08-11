@@ -8,13 +8,14 @@ import CityPage from '../Pages/CityPage';
 import StatePage from '../Pages/CitiesByStatePage';
 import FavoritePage from '../Pages/FavoritesPage';
 import Profile from '../Pages/UserProfile';
+import { AppContainer } from './style';
 
 function App() {
     const tokenStorageString = localStorage.getItem("user")
     const tokenStorage = JSON.parse(tokenStorageString)
     const [user, setUser] = useState(tokenStorage)
     return (
-        <UserContext.Provider value={[user, setUser]}>
+        <UserContext.Provider value={[user, setUser]}><AppContainer>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<MainPage/>}/>
@@ -26,7 +27,7 @@ function App() {
                     <Route path="/profile" element={<Profile/>}/>
                 </Routes>
         </BrowserRouter>
-        </UserContext.Provider>
+        </AppContainer></UserContext.Provider>
     )
 }
 

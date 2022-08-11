@@ -5,13 +5,14 @@ import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link, useParams } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 
 const CityByState = ({value}) => {
 
     const [getCities, setGetCities] = useState([]);
     const {stateId} = useParams();
-    // console.log(getCities)
+    console.log(getCities)
 
      useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/state/`+stateId+'/cities').then(
@@ -37,7 +38,7 @@ const CityByState = ({value}) => {
                                         <CityInfos>
                                             <h6>{`${city.name}`}</h6>
                                             <p>{`${city.short_call}`}</p>
-                                            <Link to={`/city/${city.id}`}>CONHEÇA MELHOR</Link>
+                                            <Button variant="contained"><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
                                         </CityInfos>
                                         <Buttons>
                                             {

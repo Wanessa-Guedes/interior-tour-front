@@ -39,9 +39,9 @@ const VisitedButton = ({ visited, token, userId, cityId }) => {
         <>
         {
             ((userId !== undefined)?
-                    ((isVisited)?<TbMapPin onClick={toogleVisited}/>
-                                :<TbMapPinOff onClick={toogleVisited}/>)
-                                    :(<TbMapPinOff onClick={toogleVisited}/>))
+                    ((isVisited)?<TbMapPin cursor={"pointer"} onClick={toogleVisited}/>
+                                :<TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/>)
+                                    :(<TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/>))
         }
         </>
     )

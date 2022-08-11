@@ -39,9 +39,9 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
         <>
         {
             ((userId !== undefined)?
-                ((isLiked)?<AiFillHeart fill={'#AC0000'} onClick={toogleLike}/>
-                            :<AiOutlineHeart onClick={toogleLike}/>)
-                                :(<AiOutlineHeart onClick={toogleLike}/>))
+                ((isLiked)?<AiFillHeart cursor={"pointer"} fill={'#AC0000'} onClick={toogleLike}/>
+                            :<AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/>)
+                                :(<AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/>))
         }
         </>
     )

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const NavHeader = styled.nav`
     display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const Ul = styled.ul`

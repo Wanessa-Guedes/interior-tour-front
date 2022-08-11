@@ -1,12 +1,13 @@
 import DeleteButton from "../DeleteCommentButton";
 import EditButton from "../EditCommentButton";
-import { CommentsInfo } from "./style";
+import { CommentsInfo, ContainCommentButtons, ContainerComments, ContainPicName } from "./style";
 
 
 const CommentsForm = ({ value, comments, updateComment, setUpdateComment, deleteCommentStatus, setDeleteCommentStatus }) => {
     
     return (
         <>
+        <ContainerComments>
             {
                 comments.map(comment => {
                     return (
@@ -14,7 +15,7 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                         {
                             (value[0])?(
                             <CommentsInfo key={comment.id}>
-                                <div>
+                                    <ContainPicName>
                                 {
                                    <img src={comment.user.profile_picture} alt={`Imagem de perfil do ${comment.user.user_name}`}/>
                                 }
@@ -22,7 +23,8 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                 {
                                     comment.user.user_name
                                 }
-
+                                    </ContainPicName>
+                                <ContainCommentButtons>
                                 {
                                     comment.comment
                                 }
@@ -42,13 +44,14 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                         </>):(
                                             <></>)
                                 }
-                                </div>
+                                </ContainCommentButtons>
                             </CommentsInfo>):(<></>)
                         }
                         </>
                         )
                 })
             }
+        </ContainerComments>
         </>
     )
 }

@@ -39,9 +39,9 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
         <>
         {
             ((userId !== undefined)?
-                            ((isFavorite)?<AiFillStar fill={'#f3dc58'} onClick={toogleFavorite}/>
-                                    :<AiOutlineStar onClick={toogleFavorite}/>)
-                                        :(<AiOutlineStar onClick={toogleFavorite}/>))
+                            ((isFavorite)?<AiFillStar cursor={"pointer"} fill={'#f3dc58'} onClick={toogleFavorite}/>
+                                    :<AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/>)
+                                        :(<AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/>))
         }
         </>
     )

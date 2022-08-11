@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { MainContain, Title } from "./style";
 
 
 const ProfileForm = ({value, URL}) => {
 
     const [getInfos, setGetInfos] = useState([]);
-    let infosUser;
 
     useEffect(() => {
         if(value[0] !== null){
@@ -18,14 +18,9 @@ const ProfileForm = ({value, URL}) => {
             // console.log('sou a rota de comentários')
     }}, [value]);
 
-/*     function infosArray (infos) {
-        for(let i = 0; i < infos.length; i++){
-            infosUser.push(infos[i])
-        }
-        setGetInfos(infosUser)
-    } */
-
     return(<>
+    <Title>Seu Perfil</Title>
+    <MainContain>
         <ul>
             {
                 getInfos?.map(info => {
@@ -37,6 +32,7 @@ const ProfileForm = ({value, URL}) => {
                 })
             }
         </ul>
+    </MainContain>
     </>)
 }
 

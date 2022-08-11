@@ -6,9 +6,9 @@ export const Form = styled.form`
     flex-direction: column;
     text-align: center;
     gap: 13px;
-    width: 90%;
-    margin-left: 2%;
-    input, button {
+    padding: 5%;
+    width: 100%;
+    input {
         height: 40px;
         border-radius: 6px;
         font-family: 'Square Peg', cursive ;
@@ -16,18 +16,12 @@ export const Form = styled.form`
         font-weight: 700;
         padding: 0 17px;
         border-width: 0 0 2px;
-        border-color: #7618f2;
+        border-color: var(--block-buttons-color);
         ::placeholder {
             color: #9F9F9F;
         }
     }
-    button {
-        width: 50%;
-        margin-left: 25%;
-        background-color: #7618f2;
-        color: white;
-        cursor: pointer;
-    }
+
     a {
         margin-top: 5px;
         font-size: 20px;
@@ -44,3 +38,21 @@ export const Form = styled.form`
         }
     }
 `
+
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: var(--block-infos-city);
+    border-radius: 30px 10px;
+    margin-left: 25%;
+`
+
+export const Loader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--backgrund-title);
+`
+

@@ -14,14 +14,13 @@ export default function SignIn(){
 
     return(
         <>
-        <Header value={[user, setUser]}/>
         <SignInTitle>SIGN IN</SignInTitle>
         <AuthForm
             options={{
                 inputs: inputs,
-                submitButtonText: 'Sign In',
+                submitButtonText: 'Entrar',
                 auxPageLink: '/sign-up',
-                auxPageLinkText: 'Switch back to sign up',
+                auxPageLinkText: 'Ainda não tem uma conta? Cadastre-se',
                 font: 'sign-in'
             }}
         />

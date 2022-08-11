@@ -3,6 +3,8 @@ import styled from "styled-components"
 export const SBWithDropdown = styled.section`
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
     
     @media screen and (max-width: 650px) {
         width: 100%;
@@ -15,6 +17,12 @@ export const SearchBarContainer = styled.form`
     width: 563px;
     border-radius: 8px;
     display: flex;
+    button {
+        border: none;
+        background-color: #FFFF;
+        border-radius: 0 8px 8px 0;
+        height: 47px;
+    }
     @media screen and (max-width: 900px) {
         width: 350px;
     }
