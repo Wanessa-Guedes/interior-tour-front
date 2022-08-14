@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { useState } from 'react';
-import MainPage from '../Pages/MainPage';
+import MainPage from '../Pages/MainPage/index.jsx';
 import SignUp from '../Pages/AuthPage/SignUp';
 import SignIn from '../Pages/AuthPage/Login';
 import UserContext from '../../contexts/UserContext';
