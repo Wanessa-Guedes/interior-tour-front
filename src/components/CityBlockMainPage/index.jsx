@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./../App/style.jsx";
+import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style.jsx";
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
