@@ -8,7 +8,7 @@ import CityPage from '../Pages/CityPage';
 import StatePage from '../Pages/CitiesByStatePage';
 import FavoritePage from '../Pages/FavoritesPage';
 import Profile from '../Pages/UserProfile';
-import { AppContainer } from './style';
+import AppContainer from './style.jsx';
 
 function App() {
     const tokenStorageString = localStorage.getItem("user")
