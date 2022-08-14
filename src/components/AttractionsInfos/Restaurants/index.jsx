@@ -1,4 +1,4 @@
-import { MainBulletAttractions } from "./../../AttractionsInfos/style"
+import { MainBulletAttractions } from "./../../AttractionsInfos/style.jsx"
 
 const Restaurants = ({ attractions }) => {
     return(<>

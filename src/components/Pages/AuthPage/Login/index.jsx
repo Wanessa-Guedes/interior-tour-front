@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import AuthForm from "../../../AuthForm";
-import Header from "../../../Header";
-import { SignInTitle } from "./style";
+import AuthForm from "../../../AuthForm/index.jsx";
+import { SignInTitle } from "./style.jsx";
 import UserContext from "./../../../../contexts/UserContext";
 
 
