@@ -1,21 +1,21 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { useState } from 'react';
 import MainPage from '../Pages/MainPage/index.jsx';
-import SignUp from '../Pages/AuthPage/SignUp';
-import SignIn from '../Pages/AuthPage/Login';
+import SignUp from '../Pages/AuthPage/SignUp/index.jsx';
+import SignIn from '../Pages/AuthPage/Login/index.jsx';
 import UserContext from '../../contexts/UserContext';
-import CityPage from '../Pages/CityPage';
-import StatePage from '../Pages/CitiesByStatePage';
-import FavoritePage from '../Pages/FavoritesPage';
-import Profile from '../Pages/UserProfile';
-import AppContainer from './style.jsx';
+import CityPage from '../Pages/CityPage/index.jsx';
+import StatePage from '../Pages/CitiesByStatePage/index.jsx';
+import FavoritePage from '../Pages/FavoritesPage/index.jsx';
+import Profile from '../Pages/UserProfile/index.jsx';
+//import AppContainer from './style.jsx';
 
 function App() {
     const tokenStorageString = localStorage.getItem("user")
     const tokenStorage = JSON.parse(tokenStorageString)
     const [user, setUser] = useState(tokenStorage)
     return (
-        <UserContext.Provider value={[user, setUser]}><AppContainer>
+        <UserContext.Provider value={[user, setUser]}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<MainPage/>}/>
@@ -27,7 +27,7 @@ function App() {
                     <Route path="/profile" element={<Profile/>}/>
                 </Routes>
         </BrowserRouter>
-        </AppContainer></UserContext.Provider>
+        </UserContext.Provider>
     )
 }
 
