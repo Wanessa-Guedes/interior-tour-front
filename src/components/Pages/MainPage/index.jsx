@@ -1,7 +1,7 @@
 import CentralImg from "../../CentralImg"
 import CityBlock from "../../CityBlockMainPage";
 import Header from "./../../Header"
-import { CityTitle } from "./style"
+import { CityTitle } from "./style.jsx"
 import { useContext } from "react";
 import UserContext from "./../../../contexts/UserContext";
 
