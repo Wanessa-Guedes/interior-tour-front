@@ -5,7 +5,7 @@ import ProfileForm from "../../ProfileForm";
 
 export default function Profile(){
     const [user, setUser] = useContext(UserContext);
-    const URL = `/infoaccount`;
+    const URL = `infoaccount`;
     return (<>
         <Header value={[user, setUser]}/>
         <ProfileForm value={[user, setUser]} URL={URL}/>

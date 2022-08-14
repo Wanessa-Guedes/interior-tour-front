@@ -14,7 +14,7 @@ const Comments = ({ value, id }) => {
         useEffect(() => {
             if(value[0] !== null){
                 const config = {headers: { authorization: `Bearer ${value[0].token}`}}
-                const URL = process.env.REACT_APP_API_URL+'/infocity/comments/'+id;
+                const URL = process.env.REACT_APP_API_URL+'infocity/comments/'+id;
                 const promise = axios.get(URL, config);
                 promise.then(response => {
                     setComments(response.data)

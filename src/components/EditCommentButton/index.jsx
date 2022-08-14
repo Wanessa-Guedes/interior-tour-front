@@ -36,7 +36,7 @@ const EditButton = ({ value, comment, updateComment, setUpdateComment, commentUp
     function editCommentSubmit(e){
         e.preventDefault()
         setDisable(true)
-        const promise = axios.put(`${process.env.REACT_APP_API_URL}/infocity/update/`+comment.id,{
+        const promise = axios.put(`${process.env.REACT_APP_API_URL}infocity/update/`+comment.id,{
             comment: commentValue
         },
         {

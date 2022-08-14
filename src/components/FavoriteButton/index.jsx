@@ -15,7 +15,7 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
             navigate("/sign-in");
         } else if(!isFavorite){
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/favorite';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/favorite';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisFavorite(true)
@@ -23,7 +23,7 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
             console.log('sou a rota de Favorite')
         } else {
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/unfavorite';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/unfavorite';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisFavorite(false);

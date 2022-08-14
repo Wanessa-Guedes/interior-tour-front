@@ -15,7 +15,7 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
             navigate("/sign-in");
         } else if(!isLiked){
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/like';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/like';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisLiked(true)
@@ -23,7 +23,7 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
             console.log('sou a rota de like')
         } else {
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/dislike';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/dislike';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisLiked(false);

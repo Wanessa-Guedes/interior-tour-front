@@ -21,7 +21,7 @@ const AuthForm = ({options}) => {
         onSubmit = async () => {
             try {
                 setLoading(true);
-                await axios.post(process.env.REACT_APP_API_URL + '/sign-up', data)
+                await axios.post(process.env.REACT_APP_API_URL + 'sign-up', data)
                 toast.sucess('Usuário cadastrado com sucesso')
                 setLoading(false);
                 navigate('/sign-in')
@@ -36,7 +36,7 @@ const AuthForm = ({options}) => {
         onSubmit = async () => {
             try {
                 setLoading(true);
-                const response = await axios.post(process.env.REACT_APP_API_URL + '/sign-in', data)
+                const response = await axios.post(process.env.REACT_APP_API_URL + 'sign-in', data)
                 localStorage.setItem('user', JSON.stringify(response.data))
                 toast.success('BEM-VINDO');
                 setLoading(false);

@@ -13,6 +13,7 @@ const CityBlock = ({value, URL}) => {
     const [getCities, setGetCities] = useState([]);
     const [loading, setLoading] = useState(false);
     console.log(getCities)
+    console.log(process.env.REACT_APP_API_URL)
 
     useEffect(() => {
         setLoading(true)

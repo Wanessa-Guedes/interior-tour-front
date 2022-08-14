@@ -10,7 +10,7 @@ const SearchBar = () => {
     const navigate = useNavigate();
 
     function onSubmit (state) {
-        const promise = axios.post(process.env.REACT_APP_API_URL+'/searchstate', {state})
+        const promise = axios.post(process.env.REACT_APP_API_URL+'searchstate', {state})
         promise.then(response => {
             setSearchResult([response.data])
             console.log('response', response.data)

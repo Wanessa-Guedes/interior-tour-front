@@ -15,7 +15,7 @@ const CityInfos = ({ value }) => {
     //console.log(process.env.API_GOOGLE)
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/city/${id}`).then(
+        axios.get(`${process.env.REACT_APP_API_URL}city/${id}`).then(
             response => {
                 setGetCity([response.data]);
             }

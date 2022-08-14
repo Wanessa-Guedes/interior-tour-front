@@ -16,7 +16,7 @@ const CityByState = ({value}) => {
     console.log(getCities)
 
      useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/state/`+stateId+'/cities').then(
+        axios.get(`${process.env.REACT_APP_API_URL}state/`+stateId+'/cities').then(
             response => {
                 setGetCities(response.data);
             }

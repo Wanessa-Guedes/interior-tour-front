@@ -8,7 +8,7 @@ import { CityTitle } from "./style";
 
 export default function FavoritePage () {
     const [user, setUser] = useContext(UserContext);
-    const URL = `/main/favorites`;
+    const URL = `main/favorites`;
     return (<>
             <Header value={[user, setUser]}/>
             <CentralImg/>

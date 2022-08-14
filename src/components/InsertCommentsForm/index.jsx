@@ -14,7 +14,7 @@ const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus
     function publish(e){
         e.preventDefault()
         setDisable(true)
-        const promise = axios.post(`${process.env.REACT_APP_API_URL}/infocity/insertComment/`+id,{
+        const promise = axios.post(`${process.env.REACT_APP_API_URL}infocity/insertComment/`+id,{
             comment: comment
         },
         {

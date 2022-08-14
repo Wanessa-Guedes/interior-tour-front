@@ -11,7 +11,7 @@ const DeleteButton = ({ value, comment, deleteCommentStatus, setDeleteCommentSta
 
     function deleteComment () {
         const config = {headers: { authorization: `Bearer ${value[0].token}`}}
-        const URL = process.env.REACT_APP_API_URL+'/infocity/delete/'+comment.id;
+        const URL = process.env.REACT_APP_API_URL+'infocity/delete/'+comment.id;
         const promise = axios.delete(URL, config);
         promise.then(response => {
             setModalLoad(false)
