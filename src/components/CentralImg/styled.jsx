@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Img = styled.img`
-    width: 1366px;
-    height: 250px;
+    width: 100%;
+    max-height: 30vh;
     position: relative;
 `
 
@@ -17,5 +17,16 @@ export const Container = styled.main`
         font-family: var(--title-font);
         font-size: 50px;
         color: #FFFFFF;
+    }
+
+    @media screen and (max-width: 900px) {
+        h3 {
+            font-size: 30px;
+        }
+    }
+    @media screen and (max-width: 650px) {
+        h3 {
+            font-size: 20px;
+        }
     }
 `

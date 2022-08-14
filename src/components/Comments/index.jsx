@@ -3,16 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import InsertCommentsForm from "../InsertCommentsForm";
 import CommentsForm from "../CommentsForm";
+import { DefaultText } from "./style";
 
 const Comments = ({ value, id }) => {
-    // console.log(value)
     const [comments, setComments] = useState([])
     const [updateComment, setUpdateComment] = useState(false)
     const [deleteCommentStatus, setDeleteCommentStatus] = useState(false)
     const [insertCommentStatus, setInsertCommentStatus] = useState(false)
-    // console.log(comments)
-    // console.log(updateComment)
-    // console.log(deleteCommentStatus)
 
         useEffect(() => {
             if(value[0] !== null){
@@ -22,16 +19,17 @@ const Comments = ({ value, id }) => {
                 promise.then(response => {
                     setComments(response.data)
                 }).catch((error) => console.log('Error get comments ', error))
-                // console.log('sou a rota de comentários')
         }}, [id, value, updateComment, deleteCommentStatus, insertCommentStatus]);
 
     return (
         <>
         {
-            (value[0] === null)?(<p>Faça o login ou cadastre-se para ver os comentários</p>)
+            (value[0] === null)?(<DefaultText>Faça o login ou cadastre-se para ver os comentários</DefaultText>)
                 :((comments.length === 0)?(<>
-                        <p>Nehum comentário ainda. Deixe o seu!</p>
-                        <InsertCommentsForm value={value}/>
+                        <DefaultText>Nehum comentário ainda. Deixe o seu!</DefaultText>
+                        <InsertCommentsForm value={value}
+                            insertCommentStatus={insertCommentStatus}
+                            setInsertCommentStatus={setInsertCommentStatus}/>
                         </>)
                     :(<>
                         <CommentsForm 

@@ -54,6 +54,7 @@ export const SearchBarDropdown = styled.div`
     z-index: -1;
     padding-top: 8px;
     border-radius: 0 0 8px 8px;
+    overflow: auto;
 `
 
 export const Button = styled.div`

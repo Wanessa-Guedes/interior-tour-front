@@ -1,9 +1,12 @@
+import { useState } from "react";
 import DeleteButton from "../DeleteCommentButton";
 import EditButton from "../EditCommentButton";
 import { CommentsInfo, ContainCommentButtons, ContainerComments, ContainPicName } from "./style";
 
 
 const CommentsForm = ({ value, comments, updateComment, setUpdateComment, deleteCommentStatus, setDeleteCommentStatus }) => {
+    
+    const [commentUpdateStatus, setCommentUpdateStatus] = useState(false);
     
     return (
         <>
@@ -26,21 +29,23 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                     </ContainPicName>
                                 <ContainCommentButtons>
                                 {
-                                    <span>{comment.comment}</span>
+                                    (commentUpdateStatus)?(<></>):(<span>{comment.comment}</span>)
                                 }
 
                                 {
                                     (value[0].id === comment.user.id)?(<>
-                                        <EditButton
-                                            value={value}
-                                            comment={comment}
-                                            updateComment={updateComment}
-                                            setUpdateComment={setUpdateComment}/>
                                         <DeleteButton 
                                             value={value} 
                                             comment={comment}
                                             deleteCommentStatus={deleteCommentStatus}
                                             setDeleteCommentStatus={setDeleteCommentStatus}/>
+                                        <EditButton
+                                            value={value}
+                                            comment={comment}
+                                            updateComment={updateComment}
+                                            setUpdateComment={setUpdateComment}
+                                            commentUpdateStatus={commentUpdateStatus}
+                                            setCommentUpdateStatus={setCommentUpdateStatus}/>
                                         </>):(
                                             <></>)
                                 }

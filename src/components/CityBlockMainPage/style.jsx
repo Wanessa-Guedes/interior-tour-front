@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-    width: 20%;
-    // height: 200px;
+    max-width: 300px;
+    min-height: 350px;
     background-color: var(--block-card-color);
     border-radius: 5px;
     box-shadow: 5px 10px #888888;
@@ -26,12 +26,12 @@ export const Container = styled.div`
 `
 
 export const MainInfo = styled.main`
-    //border: solid green;
+    //max-width: 100%;
+    max-height: 90vh;
     display: flex;
     flex-wrap: wrap;
-    //margin: 1% 1%;
-    justify-content: flex-start;
-    // background-color: var(--block-infos-city);
+    justify-content: center;
+    margin-bottom: 2%;
 `
 
 export const CityInfos = styled.div`
@@ -51,12 +51,12 @@ export const CityInfos = styled.div`
     p {
         width: 65%;
         word-break: normal;
-        font-family: var(--default-font);
+        font-family: var(--normal-font);
         font-size: 13px;
     }
 
     h6 {
-        font-family: var(--default-font);
+        font-family: var(--normal-font);
         font-size: 12px;
         font-weight: bold;
     }

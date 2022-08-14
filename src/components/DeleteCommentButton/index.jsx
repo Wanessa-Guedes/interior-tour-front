@@ -3,7 +3,7 @@ import axios from "axios"
 import { useState } from "react"
 import ReactModal from "react-modal"
 import Button from '@mui/material/Button';
-import { CancelButton, ConfirmButton, ContentModal, modalStyle } from "./style"
+import { ContentModal, modalStyle } from "./style"
 
 const DeleteButton = ({ value, comment, deleteCommentStatus, setDeleteCommentStatus }) => {
     const [showModal, setShowModal] = useState(false)
@@ -51,8 +51,7 @@ const DeleteButton = ({ value, comment, deleteCommentStatus, setDeleteCommentSta
                     </div>
                 </>}
             </ContentModal>
-        </ReactModal>
-
+            </ReactModal>
             <AiOutlineDelete cursor={'pointer'} onClick={() => setShowModal(true)}/>
         </>
     )

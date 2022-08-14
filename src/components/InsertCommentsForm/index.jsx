@@ -26,7 +26,6 @@ const InsertCommentsForm = ({ value, insertCommentStatus, setInsertCommentStatus
             setComment('')
             setDisable(false)
             setInsertCommentStatus(!insertCommentStatus)
-            console.log(response.data)
         })
         promise.catch(e => {
             setDisable(false)

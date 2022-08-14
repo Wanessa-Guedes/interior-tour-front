@@ -11,8 +11,8 @@ export const Form = styled.form`
     input {
         height: 40px;
         border-radius: 6px;
-        font-family: 'Square Peg', cursive ;
-        font-size: 27px;
+        font-family: var(--normal-font);
+        font-size: 20px;
         font-weight: 700;
         padding: 0 17px;
         border-width: 0 0 2px;
@@ -29,9 +29,10 @@ export const Form = styled.form`
         text-decoration: none;
     }
     @media screen and (max-width: 1000px) {
-        input, button {
-            height: 55px;
+        input, button, a {
+            height: 20%;
             font-size: 22px;
+            word-break: normal;
         }
         a {
             font-size: 17px

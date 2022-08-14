@@ -14,9 +14,11 @@ export const ImgCity = styled.img`
 `
 
 export const CityDescription = styled.h3`
-    font-family: 'Square Peg', cursive;
+    width: 90%;
+    font-family: var(--default-font);
     font-size: 30px;
     text-align: center;
+    word-break: normal;
 `
 
 export const Container = styled.main`
@@ -26,6 +28,9 @@ export const Container = styled.main`
     margin-top: 5%;
 `
 
-export const CommentsText = styled.h5`
-    color: black;
+export const CommentsText = styled.h3`
+    font-family: var(--default-font);
+    font-size: 40px;
+    text-align: center;
+    margin-top: -1%;
 `

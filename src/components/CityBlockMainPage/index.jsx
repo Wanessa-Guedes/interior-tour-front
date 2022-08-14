@@ -22,6 +22,7 @@ const CityBlock = ({value, URL}) => {
                 setLoading(false)
             }
         ).catch(e => {
+            console.log(e)
             alert(e.response.data.message)
             setLoading(false)
         })

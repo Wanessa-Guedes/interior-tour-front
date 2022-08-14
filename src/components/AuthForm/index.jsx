@@ -22,13 +22,13 @@ const AuthForm = ({options}) => {
             try {
                 setLoading(true);
                 await axios.post(process.env.REACT_APP_API_URL + '/sign-up', data)
-                alert('Usuário cadastrado com sucesso')
+                toast.sucess('Usuário cadastrado com sucesso')
                 setLoading(false);
                 navigate('/sign-in')
             } catch (error) {
                 setLoading(false);
                 if(error.response.status === 422){
-                    toast.error('Senhas não são iguais')
+                    toast.error('Dados incorretos')
                 }
             }
     }
@@ -75,7 +75,7 @@ const AuthForm = ({options}) => {
             {
                 options.inputs.map(e => {
                 return (<input key={`${e.key}`}
-                    type={e.key === ('password' || 'confirmpassword')  ? 'password': 'text'}
+                    type={((e.key === 'password') || (e.key === 'confirmpassword'))  ? 'password': 'text'}
                     onChange={changeHandler(e.key)}
                     placeholder={e.text}
                     required

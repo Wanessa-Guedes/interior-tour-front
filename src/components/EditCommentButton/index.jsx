@@ -1,14 +1,15 @@
 import { BiEditAlt } from "react-icons/bi";
 import { useState, useRef, useEffect} from 'react'
 import axios from "axios"
-import { Input } from "./style";
+import { Buttons, Form, Input } from "./style";
 
-const EditButton = ({ value, comment, updateComment, setUpdateComment }) => {
+const EditButton = ({ value, comment, updateComment, setUpdateComment, commentUpdateStatus, setCommentUpdateStatus }) => {
     const [editCommentValue, setEditCommentValue] = useState(false)
     const [disable, setDisable] = useState(false)
     const [commentValue, setCommentValue] = useState(comment.comment)
     const [resetValue, setResetValue] = useState('')
-    const inputRef = useRef()
+    const inputRef = useRef();
+    setCommentUpdateStatus(editCommentValue);
 
     function editComment() {
         if(editCommentValue === false){
@@ -20,6 +21,10 @@ const EditButton = ({ value, comment, updateComment, setUpdateComment }) => {
             setCommentValue(resetValue)
             setUpdateComment(true)
         }
+    }
+
+    function goback() {
+        setEditCommentValue(false)
     }
 
     useEffect(() => {
@@ -55,17 +60,22 @@ const EditButton = ({ value, comment, updateComment, setUpdateComment }) => {
         <>
             <BiEditAlt cursor={'pointer'} onClick={() => editComment()}/>
             {
-                (editCommentValue)?(<form>
+                (editCommentValue)?(<Form>
                 <Input ref={inputRef}
                         type='text'
                         value={commentValue}
                         onChange={e => setCommentValue(e.target.value)}
                         disabled={disable}
                     />
-                    <button 
-                        onClick={editCommentSubmit}
-                        disabled={disable}>editar</button>
-                </form>):(<></>)
+                    <Buttons>
+                        <button 
+                            onClick={editCommentSubmit}
+                            disabled={disable}>{(disable)?(`editando`):(`editar`)}</button>
+                        <button 
+                            onClick={goback}
+                            disabled={disable}>voltar</button>
+                    </Buttons>
+                </Form>):(<></>)
             }
         </>
     )

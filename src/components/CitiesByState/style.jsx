@@ -43,7 +43,7 @@ export const ContainerDown = styled.div`
 `
 
 export const NoCitiesFound = styled.p`
-    font-family: var(--default-font);
+    font-family: var(--normal-font);
     font-size: 20px;
     text-align: center;
 `

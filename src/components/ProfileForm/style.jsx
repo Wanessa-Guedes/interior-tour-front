@@ -17,7 +17,7 @@ export const ContainInfos = styled.ul`
 `
 
 export const ContainImgTxt = styled.li`
-    font-family: var(--default-font);
+    font-family: var(--normal-font);
     background-color: #C294C2;
     word-break: break-all;
     border-radius: 20px;

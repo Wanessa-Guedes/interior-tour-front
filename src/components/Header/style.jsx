@@ -24,8 +24,8 @@ export const ContainImages = styled.div`
     margin-right: 1%;
 
     svg{
-        height: 40%;
-        width: 25%;
+        height: 35px;
+        width: 50px;
         cursor: pointer;
 
         :hover {
@@ -40,6 +40,8 @@ export const ContainNav = styled.nav`
     align-items: center;
     justify-content: center;
     background-color: white;
+    font-size: 30px;
+    font-family: var(--normal-font);
     border-radius: 0 8px 0 8px;
     z-index: 5;
     width: 15%;
@@ -47,6 +49,17 @@ export const ContainNav = styled.nav`
     cursor: pointer;
     position: fixed;
     top: 80px;
+
+    @media screen and (max-width: 900px) {
+        top: 60px;
+        font-size: 10px;
+        width: 25%;
+        margin-left: 75%;
+    }
+
+    @media screen and (max-width: 600px) {
+        top: 50px;
+    }
 `
 
 export const ContainLogoTitle = styled.div`
@@ -60,6 +73,19 @@ export const ContainLogoTitle = styled.div`
 
     h3 {
         margin: 0 10% 0 10%;
+    }
+
+    @media screen and (max-width: 760px) {
+        h3 {
+            display: none;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        width: 10%;
     }
 `
 

@@ -19,18 +19,23 @@ export const ContentModal = styled.div`
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Lato';
+    font-family: var(--normal-font);
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 41px;
     text-align: center;
+    word-break: normal;
 
     div {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 20px;
     }
 `
 export const modalStyle = {
@@ -42,8 +47,8 @@ export const modalStyle = {
         bottom: 0
     },
     content: {
-        width: 400,
-        height: 150,
+        width: "40%",
+        height: "25%",
         color: '#ffffff',
         backgroundColor: "#79A9E8",
         borderRadius: '50px',

@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { CityDescription, CityTitle, CommentsText, Container, ImgCity } from "./style";
-import AttracttionsInfos from "../Attractions/style";
 import Comments from "../Comments";
+import Restaurants from "../AttractionsInfos/Restaurants";
+import Attractions from "../AttractionsInfos/Attractions";
+import Events from "../AttractionsInfos/Events";
 
 const CityInfos = ({ value }) => {
 
     const { id } = useParams();
     const [getCity, setGetCity] = useState([]);
-     console.log(getCity)
+     //console.log(getCity)
     //console.log(process.env.API_GOOGLE)
 
     useEffect(() => {
@@ -23,14 +25,16 @@ const CityInfos = ({ value }) => {
     return (<>
                 {
                     getCity?.map(city => {
-                        return (
+                    return (
                         <>
                         <Container>
                             <CityTitle>{city.name} - {city.state.name}</CityTitle>
                             <ImgCity src={city.url_picture} alt={`Cidade de ${city.name} - ${city.state.name}`}/>
                             <CityDescription>{city.description}</CityDescription>
                         </Container>
-                        <AttracttionsInfos city={city}/>
+                        <Restaurants attractions={city.attractions}/>
+                        <Attractions attractions={city.attractions}/>
+                        <Events attractions={city.attractions}/>
                         <CommentsText>Comentários</CommentsText>
                         <Comments value={value} id={city.id}/>
                         </>

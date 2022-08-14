@@ -13,14 +13,14 @@ export const Ul = styled.ul`
     flex-direction: column;
 
     a {
-        font-family: var(--default-font);
+        font-family: var(--normal-font);
         font-size: 20px;
         color: black;
         text-decoration: none;
     }
 
     li {
-        font-family: var(--default-font);
+        font-family: var(--normal-font);
         font-size: 20px;
         color: black;
     }

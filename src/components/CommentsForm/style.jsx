@@ -25,8 +25,8 @@ img {
 `
 
 export const ContainCommentButtons = styled.div`
-    width: 15rem;
-    height: 2.5rem;
+    width: 20%;
+    height: 20%;
     display: flex;
     align-items: center;
     margin-left: 2%;
@@ -40,5 +40,9 @@ export const ContainCommentButtons = styled.div`
 
     svg {
         margin: 2%;
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 80%;
     }
 `

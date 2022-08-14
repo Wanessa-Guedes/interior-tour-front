@@ -11,8 +11,8 @@ export const Form = styled.form`
         height: 40px;
         width: 100%;
         border-radius: 6px;
-        font-family: 'Square Peg', cursive ;
-        font-size: 27px;
+        font-family: var(--normal-font) ;
+        font-size: 17px;
         font-weight: 700;
         padding: 0 17px;
         border-width: 0 0 2px;
@@ -21,12 +21,17 @@ export const Form = styled.form`
             color: #9F9F9F;
         }
     }
+
+    @media screen and (max-width: 900px) {
+        width: 350px;
+    }
 `
 
 export const ContainFormButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     button {
         text-decoration: none;

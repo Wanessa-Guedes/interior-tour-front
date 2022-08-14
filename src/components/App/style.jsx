@@ -9,9 +9,8 @@ export const AppContainer = styled.main`
   --backgrund-title: #FBCAFB;
   --header-color: #FFE7FF50;
   --title-font: 'Indie Flower', cursive;
-  --subtitle-font: 'Oswald', sans-serif;
-  --default-font: 'Lato', sans-serif;
-  --line-grey: #484848;
+  --normal-font: 'Oswald', sans-serif;
+  --default-font: 'Square Peg', cursive;
   background-color: var(--main-background-color);
   height: 100%;
   width: 100%;
