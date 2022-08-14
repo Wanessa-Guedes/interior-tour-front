@@ -2,7 +2,6 @@ import {AiOutlineDelete} from "react-icons/ai"
 import axios from "axios"
 import { useState } from "react"
 import ReactModal from "react-modal"
-import Button from '@mui/material/Button';
 import { ContentModal, modalStyle } from "./style"
 
 const DeleteButton = ({ value, comment, deleteCommentStatus, setDeleteCommentStatus }) => {
@@ -40,14 +39,14 @@ const DeleteButton = ({ value, comment, deleteCommentStatus, setDeleteCommentSta
                 :<>
                     Tem certeza que gostaria de deletar o comentário?
                     <div>
-                    <Button variant="contained" onClick={() => setShowModal(false)}>
+                    <button onClick={() => setShowModal(false)}>
                         Não
-                    </Button>
-                    <Button variant="contained" onClick={() => operationConfirm()}>
+                    </button>
+                    <button onClick={() => operationConfirm()}>
                         <label>
                             Sim
                         </label>
-                    </Button>
+                    </button>
                     </div>
                 </>}
             </ContentModal>

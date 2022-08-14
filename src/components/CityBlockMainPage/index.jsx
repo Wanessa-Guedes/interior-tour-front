@@ -5,7 +5,6 @@ import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link } from "react-router-dom";
-import Button from '@mui/material/Button';
 import { InfinitySpin } from  'react-loader-spinner';
 
 const CityBlock = ({value, URL}) => {
@@ -42,7 +41,7 @@ const CityBlock = ({value, URL}) => {
                                 <CityInfos>
                                     <h6>{`${city.name}`}</h6>
                                     <p>{`${city.short_call}`}</p>
-                                    <Button variant="contained"><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
+                                    <button><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></button>
                                 </CityInfos>
                                 <Buttons>
                                     {

@@ -3,7 +3,6 @@ import { Form, Container, Loader } from "./style";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../contexts/UserContext";
-import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from  'react-loader-spinner';
@@ -84,19 +83,19 @@ const AuthForm = ({options}) => {
             }
             {
                 (loading)?(<Loader><InfinitySpin color="#fa8bfa"/></Loader>):(<>
-            <Button variant="contained" disabled={disabled} type="submit">
+            <button disabled={disabled} type="submit">
                         {options.submitButtonText}
-                </Button>
-                <Button variant="outlined">
+                </button>
+                <button>
                     <Link to={options.auxPageLink}>
                         {options.auxPageLinkText}
                     </Link>
-                </Button>
-                <Button variant="outlined">
+                </button>
+                <button>
                     <Link to={"/"}>
                         Voltar para a página principal
                     </Link>
-                </Button>
+                </button>
                </> )
             }
             </Form>

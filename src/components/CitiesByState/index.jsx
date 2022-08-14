@@ -5,7 +5,6 @@ import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link, useParams } from "react-router-dom";
-import Button from '@mui/material/Button';
 import { NoCitiesFound } from "./style";
 
 
@@ -39,7 +38,7 @@ const CityByState = ({value}) => {
                                         <CityInfos>
                                             <h6>{`${city.name}`}</h6>
                                             <p>{`${city.short_call}`}</p>
-                                            <Button variant="contained"><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
+                                            <button><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></button>
                                         </CityInfos>
                                         <Buttons>
                                             {
