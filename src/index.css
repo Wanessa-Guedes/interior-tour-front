@@ -4,6 +4,9 @@
 
 body {
   margin: 0;
+  background-color: #C1DBFF;
+  height: 100%;
+  width: 100%;
 }
 
 h1, p, h3, h4 {

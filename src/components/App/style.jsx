@@ -11,7 +11,4 @@ export const AppContainer = styled.main`
   --title-font: 'Indie Flower', cursive;
   --normal-font: 'Oswald', sans-serif;
   --default-font: 'Square Peg', cursive;
-  background-color: var(--main-background-color);
-  height: 100%;
-  width: 100%;
 `
