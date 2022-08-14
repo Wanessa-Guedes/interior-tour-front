@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const Nav = ({ value }) => {
     const navigate = useNavigate();
-    // TODO: LEMBRAR DE MUDAR PARA A ROTA CORRETA
     function userProf () {
         if(value[0] !== null){
             if(value[0].token !== null){

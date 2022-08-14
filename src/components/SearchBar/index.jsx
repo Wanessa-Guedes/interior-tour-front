@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
-import { SBWithDropdown, SearchBarContainer, SearchBarDropdown, SearchBarInput, SearchBarUnclickableButton, SearchBarButtonResult } from "./style";
+import { SBWithDropdown, SearchBarContainer, SearchBarDropdown, SearchBarInput, SearchBarUnclickableButton, SearchBarButtonResult, Button } from "./style";
 
 const SearchBar = () => {
     const [searchResult, setSearchResult] = useState(null);
@@ -79,9 +79,9 @@ const SearchBar = () => {
                     placeholder="Busque um estado..."
                     onChange={onChange}
                 />
-                <button type="submit">
+                <Button type="submit">
                     <BiSearchAlt />
-                </button>
+                </Button>
             </SearchBarContainer>
             <SearchBarDropdown  state={searchResult}>
                 {searchResult ? <RenderResults states={searchResult}/> : <></> }

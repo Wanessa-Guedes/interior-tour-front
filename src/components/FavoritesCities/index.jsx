@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./../CityBlockMainPage/style";
+import { Button, Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./../CityBlockMainPage/style";
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
@@ -43,7 +43,7 @@ const FavoriteCity = ({value, URL}) => {
                             <CityInfos>
                                 <h6>{`${cities.name}`}</h6>
                                 <p>{`${cities.short_call}`}</p>
-                                <button><Link to={`/city/${cities.id}`}>CONHEÇA MAIS</Link></button>
+                                <Button><Link to={`/city/${cities.id}`}>CONHEÇA MAIS</Link></Button>
                             </CityInfos>
                             <Buttons>
                                 {

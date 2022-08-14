@@ -58,3 +58,18 @@ export const modalStyle = {
         overflow: 'hidden'
     }
 }
+
+export const Button = styled.button`
+    width: 30% ;
+    height: 30%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+
+    span {
+        font-family: var(--normal-font);
+        color: #FFFF;
+        font-size: 20px;
+    }
+`

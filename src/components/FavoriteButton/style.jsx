@@ -7,6 +7,7 @@ export const IconsPopUp = styled.div`
     position: absolute;
     width: 20%;
     background-color: rgba(96, 96, 102, 0.2);
+    font-family: var(--normal-font);
     font-size: 10px;
     text-align: center;
   }

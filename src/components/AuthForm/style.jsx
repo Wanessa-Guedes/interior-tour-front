@@ -57,3 +57,17 @@ export const Loader = styled.div`
     color: var(--backgrund-title);
 `
 
+export const Button = styled.button`
+    border: none;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+    word-break: normal;
+
+    a, p {
+        font-family: var(--normal-font);
+        color: #FFFF;
+        font-size: 17px;
+    }
+`
+

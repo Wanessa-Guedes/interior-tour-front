@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style.jsx";
+import { Button, Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style.jsx";
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link } from "react-router-dom";
 import { InfinitySpin } from  'react-loader-spinner';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CityBlock = ({value, URL}) => {
 
@@ -21,12 +22,13 @@ const CityBlock = ({value, URL}) => {
             }
         ).catch(e => {
             console.log(e)
-            alert(e.response.data.message)
+            toast.error(e.response)
             setLoading(false)
         })
     }, [value]);
 
     return (<>
+    <ToastContainer />
         {(loading)?(<Loader><InfinitySpin/></Loader>):
         (<MainInfo>
             {
@@ -39,7 +41,7 @@ const CityBlock = ({value, URL}) => {
                                 <CityInfos>
                                     <h6>{`${city.name}`}</h6>
                                     <p>{`${city.short_call}`}</p>
-                                    <button><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></button>
+                                    <Button><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
                                 </CityInfos>
                                 <Buttons>
                                     {

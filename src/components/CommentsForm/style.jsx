@@ -19,8 +19,14 @@ export const ContainPicName = styled.div`
     display: flex;
     align-items: center;
 img {
-        width: 10%;
+        width: 15%;
         border-radius: 5px;
+    }
+
+    span {
+        margin-left: 2%;
+        font-family: var(--normal-font);
+        font-size: 20px;
     }
 `
 
@@ -29,17 +35,26 @@ export const ContainCommentButtons = styled.div`
     height: 20%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     margin-left: 2%;
     background-color: #C294C2;
-    word-break: break-all;
+    word-break: normal;
     border-radius: 20px;
 
     span {
-        margin-left: 2%;
+        font-family: var(--normal-font);
+        font-size: 20px;
     }
 
-    svg {
-        margin: 2%;
+    div {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        svg {
+            padding: 2%;
+            font-size: 20px;
+        }
     }
 
     @media screen and (max-width: 900px) {

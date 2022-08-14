@@ -35,8 +35,12 @@ export const MainInfo = styled.main`
 `
 
 export const CityInfos = styled.div`
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
 
     a {
         text-decoration: none;
@@ -56,9 +60,10 @@ export const CityInfos = styled.div`
     }
 
     h6 {
-        font-family: var(--normal-font);
-        font-size: 12px;
-        font-weight: bold;
+        font-family: var(--title-font);
+        font-size: 20px;
+        font-weight: 700;
+        margin: -2% 0 -2% 0;
     }
 `
 
@@ -86,4 +91,10 @@ export const Loader = styled.div`
     justify-content: center;
     color: var(--backgrund-title);
     margin-top: 25%;
+`
+export const Button = styled.button`
+    border: none;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
 `

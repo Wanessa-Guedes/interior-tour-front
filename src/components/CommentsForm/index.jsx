@@ -24,7 +24,7 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                 }
 
                                 {
-                                    comment.user.user_name
+                                   <span> {comment.user.user_name} </span>
                                 }
                                     </ContainPicName>
                                 <ContainCommentButtons>
@@ -33,7 +33,7 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                 }
 
                                 {
-                                    (value[0].id === comment.user.id)?(<>
+                                    (value[0].id === comment.user.id)?(<div>
                                         <DeleteButton 
                                             value={value} 
                                             comment={comment}
@@ -46,7 +46,7 @@ const CommentsForm = ({ value, comments, updateComment, setUpdateComment, delete
                                             setUpdateComment={setUpdateComment}
                                             commentUpdateStatus={commentUpdateStatus}
                                             setCommentUpdateStatus={setCommentUpdateStatus}/>
-                                        </>):(
+                                        </div>):(
                                             <></>)
                                 }
                                 </ContainCommentButtons>

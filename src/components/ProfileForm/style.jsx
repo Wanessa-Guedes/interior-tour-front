@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const MainContain = styled.main`
     display: flex;
+    align-items: center;
 `
 export const ContainInfos = styled.ul`
     width: 50%;
@@ -14,12 +15,17 @@ export const ContainInfos = styled.ul`
     justify-content: space-evenly;
     margin: auto;
     border-radius: 10px;
+
+    @media screen and (max-width: 900px) {
+        width: 100%;
+        margin-right: 5%;
+    }
 `
 
 export const ContainImgTxt = styled.li`
     font-family: var(--normal-font);
     background-color: #C294C2;
-    word-break: break-all;
+    word-break: normal;
     border-radius: 20px;
     width: 100%;
     display: flex;

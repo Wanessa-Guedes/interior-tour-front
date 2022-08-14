@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Form, Container, Loader } from "./style";
+import { Form, Container, Loader, Button } from "./style";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../../contexts/UserContext";
@@ -15,13 +15,13 @@ const AuthForm = ({options}) => {
     const [data, setData] = useState({})
     const [user, setUser] = useContext(UserContext)
     let onSubmit;
-
+    
     if(options.font === 'sign-up'){
         onSubmit = async () => {
             try {
                 setLoading(true);
                 await axios.post(process.env.REACT_APP_API_URL + 'sign-up', data)
-                toast.sucess('Usuário cadastrado com sucesso')
+                toast.success('Usuário cadastrado com sucesso')
                 setLoading(false);
                 navigate('/sign-in')
             } catch (error) {
@@ -81,23 +81,23 @@ const AuthForm = ({options}) => {
                 />
                 )})
             }
-            {
-                (loading)?(<Loader><InfinitySpin color="#fa8bfa"/></Loader>):(<>
-            <button disabled={disabled} type="submit">
-                        {options.submitButtonText}
-                </button>
-                <button>
+            
+            { (loading)?(<Loader><InfinitySpin color="#fa8bfa"/></Loader>):(<>
+            <Button disabled={disabled} type="submit">
+                        <p>{options.submitButtonText}</p>
+                </Button>
+                <Button>
                     <Link to={options.auxPageLink}>
                         {options.auxPageLinkText}
                     </Link>
-                </button>
-                <button>
+                </Button>
+                <Button>
                     <Link to={"/"}>
                         Voltar para a página principal
                     </Link>
-                </button>
-               </> )
-            }
+                </Button>
+            </>) }
+            
             </Form>
         </Container>
     </>)

@@ -22,7 +22,7 @@ export const SearchBarContainer = styled.form`
         background-color: #FFFF;
         border-radius: 0 8px 8px 0;
         font-size: 20px;
-        height: 47px;
+        height: 45px;
         cursor: pointer;
     }
     @media screen and (max-width: 900px) {
@@ -47,6 +47,7 @@ export const SearchBarInput = styled.input`
 `
 export const SearchBarDropdown = styled.div`
     width: 100%;
+    max-height: 20vh;
     background-color: #E7E7E7;
     position: absolute;
     top: 8px;
@@ -57,8 +58,9 @@ export const SearchBarDropdown = styled.div`
     overflow: auto;
 `
 
-export const Button = styled.div`
+export const Button = styled.button`
     cursor: pointer;
+    border: none;
 `
 
 export const SearchBarButtonResult = styled(Button)`
@@ -82,4 +84,5 @@ export const SearchBarButtonResult = styled(Button)`
 
 export const SearchBarUnclickableButton = styled(SearchBarButtonResult)`
     cursor: default;
+    overflow-y: scroll;
 `
