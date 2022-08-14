@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style";
+import { Buttons, CityInfos, Container, ContainerDown, Loader, MainInfo } from "./style.jsx";
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
@@ -11,8 +11,6 @@ const CityBlock = ({value, URL}) => {
 
     const [getCities, setGetCities] = useState([]);
     const [loading, setLoading] = useState(false);
-    console.log(getCities)
-    console.log(process.env.REACT_APP_API_URL)
 
     useEffect(() => {
         setLoading(true)
