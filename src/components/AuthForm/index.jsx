@@ -83,15 +83,15 @@ const AuthForm = ({options}) => {
             }
             
             { (loading)?(<Loader><InfinitySpin color="#fa8bfa"/></Loader>):(<>
-            <Button disabled={disabled} type="submit">
+            <Button id="button-submit" disabled={disabled} type="submit">
                         <p>{options.submitButtonText}</p>
                 </Button>
-                <Button>
+                <Button id="button-go-sign-up">
                     <Link to={options.auxPageLink}>
                         {options.auxPageLinkText}
                     </Link>
                 </Button>
-                <Button>
+                <Button id="button-go-main-page">
                     <Link to={"/"}>
                         Voltar para a página principal
                     </Link>

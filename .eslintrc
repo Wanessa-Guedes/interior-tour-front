@@ -1,0 +1,17 @@
+{
+    "plugins": ["cypress"],
+    "extends": ["plugin:cypress/recommended"],
+    "rules": {
+      "jest/expect-expect": "off"
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": ["@babel/preset-react"],
+            "parserOpts": {
+                "plugins": ["jsx"]
+              }
+         }
+    }
+  }

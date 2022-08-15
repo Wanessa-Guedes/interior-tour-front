@@ -41,9 +41,9 @@ const LikeButton = ({ liked, token, userId, cityId }) => {
         <IconsPopUp>
         {
             ((userId !== undefined)?
-                ((isLiked)?<><AiFillHeart cursor={"pointer"} fill={'#AC0000'} onClick={toogleLike}/><div class="hdg-label-popup">Descurtir</div> </>
-                            :<><AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>)
-                                :(<><AiOutlineHeart cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>))
+                ((isLiked)?<><AiFillHeart id="button-like" cursor={"pointer"} fill={'#AC0000'} onClick={toogleLike}/><div class="hdg-label-popup">Descurtir</div> </>
+                            :<><AiOutlineHeart id="button-like" cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>)
+                                :(<><AiOutlineHeart id="button-like" cursor={"pointer"} onClick={toogleLike}/><div class="hdg-label-popup">Curtir</div> </>))
         }
         </IconsPopUp>
         </>

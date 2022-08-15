@@ -62,6 +62,7 @@ const SearchBar = () => {
         
          return ( states.map((state) =>{ return (state.map((s) => 
                                             <SearchBarButtonResult 
+                                                id="button-search-bar"
                                                 key={s.id}
                                                 onClick={() => click(s.id)}>
                                                     <p>{s.name}</p>

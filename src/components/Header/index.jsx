@@ -28,7 +28,7 @@ const Header = ({ value }) => {
             <SearchBar/>
                 <ContainImages>
                     <AiOutlineHome onClick={goHome}/>
-                    <BiLogIn onClick={setDrop}/>
+                    <BiLogIn id="button-nav-options" onClick={setDrop}/>
                 </ContainImages>
         </Container>
         <ContainNav>

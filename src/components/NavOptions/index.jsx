@@ -24,7 +24,7 @@ const Nav = ({ value }) => {
             <Ul>
                 <Link to={userProf()}>
                     {
-                        (value[0] === null)?`Login`:(`Seu Perfil`)
+                        (value[0] === null)?(<span id="button-login">{`Login`}</span>):(`Seu Perfil`)
                     }
                 </Link >
 

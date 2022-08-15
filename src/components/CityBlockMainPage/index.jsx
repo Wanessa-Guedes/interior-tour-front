@@ -12,7 +12,6 @@ const CityBlock = ({value, URL}) => {
 
     const [getCities, setGetCities] = useState([]);
     const [loading, setLoading] = useState(false);
-    console.log(getCities)
 
     useEffect(() => {
         setLoading(true)
@@ -42,7 +41,7 @@ const CityBlock = ({value, URL}) => {
                                 <CityInfos>
                                     <h6>{`${city.name}`}</h6>
                                     <p>{`${city.short_call}`}</p>
-                                    <Button><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
+                                    <Button id="button-know-more"><Link to={`/city/${city.id}`}>CONHEÇA MAIS</Link></Button>
                                 </CityInfos>
                                 <Buttons>
                                     {
