@@ -9,7 +9,7 @@ const Events = ({ attractions }) => {
             {
                 attractions?.map((attraction) => {
                     return (
-                            (attraction.type.type === 'attraction')?
+                            (attraction.type.type === 'event')?
                                     (
                                         <ul>
                                             <li>
