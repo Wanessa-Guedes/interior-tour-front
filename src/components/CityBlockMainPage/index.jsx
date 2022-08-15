@@ -12,6 +12,7 @@ const CityBlock = ({value, URL}) => {
 
     const [getCities, setGetCities] = useState([]);
     const [loading, setLoading] = useState(false);
+    console.log(getCities)
 
     useEffect(() => {
         setLoading(true)

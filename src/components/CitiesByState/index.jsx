@@ -1,29 +1,35 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { InfinitySpin } from  'react-loader-spinner';
 import { Button, Buttons, CityInfos, Container, ContainerDown, MainInfo } from "./../CityBlockMainPage/style"
 import LikeButton from "../LikeButton";
 import FavoriteButton from "../FavoriteButton";
 import VisitedButton from "../VisitedButton";
 import { Link, useParams } from "react-router-dom";
-import { NoCitiesFound } from "./style";
+import { Loader, NoCitiesFound } from "./style";
 
 
 const CityByState = ({value}) => {
 
     const [getCities, setGetCities] = useState([]);
     const {stateId} = useParams();
-    console.log(getCities)
+    const [loading, setLoading] = useState(false);
 
      useEffect(() => {
+        setLoading(true)
         axios.get(`${process.env.REACT_APP_API_URL}state/`+stateId+'/cities').then(
             response => {
                 setGetCities(response.data);
+                setLoading(false);
             }
-        ).catch(e => {console.log(e.data)})
+        ).catch(e => {
+            console.log(e.data)
+            setLoading(false);})
     }, [stateId]);
 
-    return (
-        <MainInfo>
+    return (<>
+        {(loading)?(<Loader><InfinitySpin/></Loader>):
+        (<MainInfo>
             {
                getCities?.map((cities) => {
                 if(cities.cities.length === 0){
@@ -75,8 +81,8 @@ const CityByState = ({value}) => {
                 })
             })
             }
-        </MainInfo>
-    )
+        </MainInfo>)}
+    </>)
 
 
 }

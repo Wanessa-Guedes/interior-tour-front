@@ -47,3 +47,11 @@ export const NoCitiesFound = styled.p`
     font-size: 20px;
     text-align: center;
 `
+
+export const Loader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--backgrund-title);
+    margin-top: 25%;
+`

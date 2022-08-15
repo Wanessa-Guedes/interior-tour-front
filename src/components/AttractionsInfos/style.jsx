@@ -6,4 +6,5 @@ export const MainBulletAttractions = styled.details`
     margin-bottom: 20px;
     font-family: var(--normal-font);
     font-size: 20px;
+    word-break: normal;
 `

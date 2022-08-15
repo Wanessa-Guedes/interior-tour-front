@@ -15,7 +15,7 @@ const VisitedButton = ({ visited, token, userId, cityId }) => {
             navigate("/sign-in");
         } else if(!isVisited){
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/visited';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/visited';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisVisited(true)
@@ -23,7 +23,7 @@ const VisitedButton = ({ visited, token, userId, cityId }) => {
             console.log('sou a rota de Visity')
         } else {
             const config = {headers: { authorization: `Bearer ${token}`}}
-            const URL = process.env.REACT_APP_API_URL+'/main/'+cityId+'/unvisited';
+            const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/unvisited';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
                 setisVisited(false);

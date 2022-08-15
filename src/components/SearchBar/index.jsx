@@ -7,6 +7,7 @@ import { SBWithDropdown, SearchBarContainer, SearchBarDropdown, SearchBarInput, 
 const SearchBar = () => {
     const [searchResult, setSearchResult] = useState(null);
     const [filterState, setFilterState ] = useState('');
+    console.log(filterState)
     const navigate = useNavigate();
 
     function onSubmit (state) {

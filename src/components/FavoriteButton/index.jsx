@@ -5,8 +5,6 @@ import axios from "axios";
 import { IconsPopUp } from "./style";
 
 const FavoriteButton = ({ favorite, token, userId, cityId }) => {
-    // console.log(favorite)
-    //console.log(userId) // undefined
     const [isFavorite, setisFavorite] = useState(favorite);
     const navigate = useNavigate();
 
@@ -18,7 +16,7 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
             const URL = process.env.REACT_APP_API_URL+'main/'+cityId+'/favorite';
             const promise = axios.post(URL, {}, config);
             promise.then(response => {
-                setisFavorite(true)
+                setisFavorite(true);
             }).catch((error) => console.log('Error Post Favorite ', error))
             console.log('sou a rota de Favorite')
         } else {
@@ -28,7 +26,6 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
             promise.then(response => {
                 setisFavorite(false);
             }).catch((error) => console.log('Error Post Unfavorite ', error))
-            console.log('sou a rota de Unfavorite')
         }
     }
 

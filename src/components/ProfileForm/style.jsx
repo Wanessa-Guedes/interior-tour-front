@@ -48,3 +48,11 @@ export const Title = styled.h1`
     margin-top: 10%;
     color: black;
 `
+
+export const Loader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--backgrund-title);
+    margin-top: 25%;
+`

@@ -17,20 +17,15 @@ const FavoriteCity = ({value, URL}) => {
             const config = {headers: { authorization: `Bearer ${value[0].token}`}}
             const promise = axios.get(`${process.env.REACT_APP_API_URL}${URL}`, config);
             promise.then(response => {
-                cityArray(response.data)
-                //setGetCities(response.data)
-            }).catch((error) => console.log('Error get favorite cities ', error))
-            // console.log('sou a rota de comentários')
-    }}, [value, getCities]);
+                for(let i = 0; i < response.data.length; i++){
+                    citiesRefact.push(response.data[i].city)
+                }
+                setGetCities(citiesRefact)
+            }).catch((error) => {
+                console.log('Error get favorite cities ', error)})
+    }}, [value, URL]);
 
-    function cityArray (cities) {
-        for(let i = 0; i < cities.length; i++){
-            citiesRefact.push(cities[i].city)
-        }
-        setGetCities(citiesRefact)
-    }
-
-    return (
+    return (<>
         <MainInfo>
             {
             (getCities.length === 0)?(<NoCitiesFound>Favorite umas cidades!! </NoCitiesFound>):(
@@ -60,7 +55,8 @@ const FavoriteCity = ({value, URL}) => {
                                                 favorite={cities.favorites?.filter((e) => e.userId === value[0].id).length !== 0}
                                                 token={value[0].token} 
                                                 userId={value[0].id} 
-                                                cityId={cities.id}/>
+                                                cityId={cities.id}
+                                                />
                                                 :<FavoriteButton favorite={false}/>)
                                 }
                                                                     {
@@ -80,9 +76,7 @@ const FavoriteCity = ({value, URL}) => {
             })
             )}
         </MainInfo>
-    )
-
-
+    </>)
 }
 
 export default FavoriteCity;
