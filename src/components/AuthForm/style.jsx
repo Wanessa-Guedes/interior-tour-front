@@ -31,7 +31,7 @@ export const Form = styled.form`
     @media screen and (max-width: 1000px) {
         input, button, a {
             height: 20%;
-            font-size: 22px;
+            font-size: 20px;
             word-break: normal;
         }
         a {
@@ -48,6 +48,11 @@ export const Container = styled.div`
     background-color: var(--block-infos-city);
     border-radius: 30px 10px;
     margin-left: 25%;
+
+    @media screen and (max-width: 900px) {
+        width: 90%;
+        margin-left: 5%;
+    }
 `
 
 export const Loader = styled.div`

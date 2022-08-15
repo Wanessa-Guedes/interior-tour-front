@@ -48,12 +48,12 @@ export const modalStyle = {
     },
     content: {
         width: "40%",
-        height: "25%",
+        height: "35%",
         color: '#ffffff',
         backgroundColor: "#79A9E8",
         borderRadius: '50px',
         position: 'absolute',
-        top: '35%',
+        top: '30%',
         left: '35%',
         overflow: 'hidden'
     }
