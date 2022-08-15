@@ -38,10 +38,10 @@ const FavoriteButton = ({ favorite, token, userId, cityId }) => {
         <IconsPopUp>
         {
             ((userId !== undefined)?
-                            ((isFavorite)?<><AiFillStar cursor={"pointer"} fill={'#f3dc58'} onClick={toogleFavorite}/>
+                            ((isFavorite)?<><AiFillStar id="button-favorite" cursor={"pointer"} fill={'#f3dc58'} onClick={toogleFavorite}/>
                                               <div class="hdg-label-popup">Desfavoritar</div> </>
-                                    :<><AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>)
-                                        :(<><AiOutlineStar cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>))
+                                    :<><AiOutlineStar id="button-favorite" cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>)
+                                        :(<><AiOutlineStar id="button-favorite" cursor={"pointer"} onClick={toogleFavorite}/><div class="hdg-label-popup">Favoritar</div> </>))
         }
         </IconsPopUp>
         </>

@@ -24,17 +24,17 @@ const Nav = ({ value }) => {
             <Ul>
                 <Link to={userProf()}>
                     {
-                        (value[0] === null)?(<span id="button-login">{`Login`}</span>):(`Seu Perfil`)
+                        (value[0] === null)?(<span id="button-login">{`Login`}</span>):(<span id="button-profile">{`Seu Perfil`}</span>)
                     }
                 </Link >
 
                 <Link to={`/favorites`}>
                     {
-                        (value[0] === null)?<></>:(`Favoritas`)
+                        (value[0] === null)?<></>:(<span id="button-favorite-page">{`Favoritas`}</span>)
                     }
                 </Link>
                 {
-                    (value[0]?(value[0].token?<li onClick={logout}>Sair</li>:<></>):<></>)
+                    (value[0]?(value[0].token?<li onClick={logout}><span id="button-logout">Sair</span></li>:<></>):<></>)
                 }
             </Ul>
         </NavHeader>

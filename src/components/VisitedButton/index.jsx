@@ -41,9 +41,9 @@ const VisitedButton = ({ visited, token, userId, cityId }) => {
         <IconsPopUp>
         {
             ((userId !== undefined)?
-                    ((isVisited)?<><TbMapPin cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Não Visitei</div> </>
-                                :<><TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>)
-                                    :(<><TbMapPinOff cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>))
+                    ((isVisited)?<><TbMapPin id="button-visited" cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Não Visitei</div> </>
+                                :<><TbMapPinOff id="button-visited" cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>)
+                                    :(<><TbMapPinOff id="button-visited" cursor={"pointer"} onClick={toogleVisited}/><div class="hdg-label-popup">Visitei</div> </>))
         }
         </IconsPopUp>
         </>
