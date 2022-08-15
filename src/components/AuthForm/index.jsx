@@ -28,6 +28,9 @@ const AuthForm = ({options}) => {
                 setLoading(false);
                 if(error.response.status === 422){
                     toast.error('Dados incorretos')
+                } 
+                if(error.response.status === 409){
+                    toast.error('E-mail já cadastrado')
                 }
             }
     }
