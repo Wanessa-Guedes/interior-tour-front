@@ -20,4 +20,5 @@ $ npm start
 
 ## Final Design
 <div align=center >
+<img src="https://github.com/Wanessa-Guedes/interior-tour-front/blob/main/images/interior-tour.gif" width="500" height="250">
 </div>
